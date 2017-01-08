@@ -67,7 +67,7 @@
 
 |Path   | Component   |
 |-------|-------------|
-| "/home" | "HomeContainer" |
+| "/" | "HomeContainer" |
 | "/sign-up" | "AuthFormContainer" |
 | "/login" | "AuthFormContainer" |
 | "/race" | "RaceContainer" |
