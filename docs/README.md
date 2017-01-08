@@ -1,4 +1,4 @@
-# TypeRacer
+# SpaceTyper
 
 [Live Site][live]
 

@@ -1,1 +1,1 @@
-# TypeRacer
+# SpaceTyper
