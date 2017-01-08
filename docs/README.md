@@ -40,11 +40,11 @@ SpaceTyper is a Typeracer inspired typing app. SpaceTyper is a typing game where
 ### Phase 6:
 
 ### Bonus Features (TBD)
-[ ] Users can re-race against their ghost after they complete a race.
-[ ] Users can view all races they’ve completed and re-race them.
-[ ] Alternate modes: code snippets instead of normal copy, sudden death mode (1 mistake and you’re out of the race), content generated for specified character practice, etc.
-[ ] Users can friend other users and send them messages.
-[ ] Allow users to challenge each other to races, and/or join a public race.
+- [ ] Users can re-race against their ghost after they complete a race.
+- [ ] Users can view all races they’ve completed and re-race them.
+- [ ] Alternate modes: code snippets instead of normal copy, sudden death mode (1 mistake and you’re out of the race), content generated for specified character practice, etc.
+- [ ] Users can friend other users and send them messages.
+- [ ] Allow users to challenge each other to races, and/or join a public race.
 
 
 [live]: http://www.herokuapp.com
