@@ -62,6 +62,10 @@
 ### Profile
 **UserProfileContainer**
  - UserProfile
+  * UserStatsContainer
+
+**UserStatsContainer**
+ - UserStats
 
 ## Routes
 
