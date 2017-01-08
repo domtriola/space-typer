@@ -15,7 +15,7 @@
     errors: []
   },
   quote: {
-    book: "Book Title",
+    title: "Book Title",
     body: "Some words to type",
     url: "amazon.com/book",
     image_url: "amazon.com/image_url",
