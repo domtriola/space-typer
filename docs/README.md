@@ -27,17 +27,41 @@ SpaceTyper is a Typeracer inspired typing app. SpaceTyper is a typing game where
 
 ### Phase 1: Rails Setup and User Authentication (2 days)
 
-**Objective:** Functioning Rails app with front-end user authentication
+* Functioning Rails app with front-end user authentication
+  - Sign Up
+  - Log In
+  - Log Out
 
-### Phase 2:
+### Phase 2: Backend Setup (1 day)
 
-### Phase 3:
+* Functioning Controllers, Models and basic seeds
+  - Quotes
+  - Scores
 
-### Phase 4:
+### Phase 3: Home Page and Navigation (2 days)
 
-### Phase 5:
+* Nav
+  - Logo
+  - User Menu
+* Play Button
+* Home Page Leaderboard
 
-### Phase 6:
+### Phase 4: Race Page (2 days)
+
+* Functioning type race
+  - Race Track
+  - Race Input
+
+### Phase 5: Race Page Results (1 day)
+
+* All results display after race
+  - Quote Info
+  - User Stats
+  - Quote Leaderboard
+
+### Phase 6: User Profile Page (1 day)
+
+* User profile displays all user stats
 
 ### Bonus Features (TBD)
 - [ ] Users can re-race against their ghost after they complete a race.
