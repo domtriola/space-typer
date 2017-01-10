@@ -3,6 +3,7 @@ import React from 'react';
 class UserMenu extends React.Component {
   constructor(props) {
     super(props);
+    // TODO: test
     console.log(props.currentUser);
   }
 
