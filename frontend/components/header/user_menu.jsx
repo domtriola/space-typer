@@ -5,11 +5,18 @@ class UserMenu extends React.Component {
     super(props);
     // TODO: test
     console.log(props.currentUser);
+    console.log(this.props.logout);
   }
 
   render() {
     return (
-      <div>username</div>
+      <div>
+        usericon
+        <ul className="user-menu">
+          <li>Profile</li>
+          <li><button onClick={this.props.logout}>Logout</button></li>
+        </ul>
+      </div>
     );
   }
 }
