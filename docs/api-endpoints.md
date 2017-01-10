@@ -11,6 +11,7 @@
 ### Users
 
 - `POST /api/users`
+- `GET /api/users/:id`
 
 ### Session
 
@@ -24,6 +25,4 @@
 
 ### Scores
 
-- `GET /api/scores`
-  - accepts query param for `user_id` or `quote_id`
 - `POST /api/scores`
