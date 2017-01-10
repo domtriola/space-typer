@@ -35,7 +35,6 @@
   * RaceTrackContainer
   * RaceInputContainer
   * RaceResultsContainer
-  * LeaderBoardContainer
 
 **RaceTrackContainer**
  - RaceTrack
@@ -52,6 +51,7 @@
 **RaceResultsContainer**
  - QuoteContainer
  - UserResultsContainer
+ - LeaderBoardContainer
 
 **QuoteContainer**
  - Quote
@@ -76,5 +76,4 @@
 | "/login" | "AuthFormContainer" |
 | "/race" | "RaceContainer" |
 | "/race/results" | "RaceResultsContainer" |
-| "/race/results" | "LeaderBoardContainer" |
 | "/user/:id" | "UserProfileContainer" |
