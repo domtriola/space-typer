@@ -71,4 +71,4 @@ SpaceTyper is a Typeracer inspired typing app. SpaceTyper is a typing game where
 - [ ] Allow users to challenge each other to races, and/or join a public race.
 
 
-[live]: http://www.herokuapp.com
+[live]: https://space-typer.herokuapp.com
