@@ -1,8 +1,8 @@
 # Component Hierarchy
 
-### Main
-**MainContainer**
- - Main
+### App
+**AppContainer**
+ - App
   * NavbarContainer
   * HomeContainer
   * RaceContainer
