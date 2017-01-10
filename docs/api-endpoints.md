@@ -25,4 +25,6 @@
 
 ### Scores
 
+- `GET /api/scores`
+  - retrieves recent high scores
 - `POST /api/scores`
