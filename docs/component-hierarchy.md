@@ -3,13 +3,13 @@
 ### App
 **AppContainer**
  - App
-  * NavbarContainer
+  * HeaderContainer
   * HomeContainer
   * RaceContainer
   * ProfileContainer
 
-**NavContainer**
- - Navbar
+**HeaderContainer**
+ - Header
   * Logo
   * UserMenu
 

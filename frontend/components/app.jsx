@@ -1,8 +1,9 @@
 import React from 'react';
+import Header from './header/header.jsx';
 
 const App = ({ children }) => (
   <div>
-    <h1>SpaceTyper</h1>
+    <Header />
     { children }
   </div>
 );
