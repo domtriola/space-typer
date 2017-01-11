@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Logo = () => (
-  <div className="logo">SpaceTyper</div>
+  <div className="logo">
+    <a href="/">SpaceTyper</a>
+  </div>
 );
 
 export default Logo;
