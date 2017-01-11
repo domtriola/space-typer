@@ -1,10 +1,12 @@
 import React from 'react';
-import Header from './header/header.jsx';
+import HeaderContainer from './header/header_container.js';
 
 const App = ({ children, router }) => (
   <div>
-    <Header router={router} />
-    { children }
+    <HeaderContainer router={router} />
+    <main>
+      { children }
+    </main>
   </div>
 );
 

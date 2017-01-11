@@ -1,0 +1,42 @@
+/* Header
+************/
+
+header {
+  background-color: $blue;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.user-menu {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 60px;
+  left: -10px;
+  color: #333;
+
+  li {
+    padding: 5px 10px;
+    border: 1px solid #666;
+  }
+}
+
+.user-icon {
+  width: 50px;
+  fill: #fff;
+}
+
+/* Logo
+************/
+
+.logo {
+  font-size: 28px;
+}
+
+
+/* User Menu
+************/

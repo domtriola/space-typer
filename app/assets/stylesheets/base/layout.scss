@@ -1,0 +1,17 @@
+body {
+  background: url("/assets/nebula.jpg");
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 1px solid #666;
+  padding: 4px;
+}
