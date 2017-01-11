@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110213602) do
+ActiveRecord::Schema.define(version: 20170111185650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "quotes", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.text     "body",       null: false
+    t.string   "url",        null: false
+    t.string   "image_url",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "quotes", ["body"], name: "index_quotes_on_body", unique: true, using: :btree
+
+  create_table "scores", force: :cascade do |t|
+    t.integer  "wpm",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id",    null: false
+    t.integer  "quote_id",   null: false
+  end
+
+  add_index "scores", ["quote_id"], name: "index_scores_on_quote_id", using: :btree
+  add_index "scores", ["user_id"], name: "index_scores_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
@@ -27,4 +49,6 @@ ActiveRecord::Schema.define(version: 20170110213602) do
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "scores", "quotes"
+  add_foreign_key "scores", "users"
 end

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ActiveRecord::Base
   attr_reader :password
 
@@ -5,6 +17,8 @@ class User < ActiveRecord::Base
   validates :username, :session_token, :password_digest, presence: true
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+
+  has_many :scores, dependent: :destroy
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64(128)

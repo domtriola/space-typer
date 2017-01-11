@@ -20,7 +20,7 @@ quote_id    | integer   | not null, foreign key (references quotes), indexed
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-title       | string    | not null, indexed
-body        | text      | not null
+title       | string    | not null
+body        | text      | not null, indexed, unique
 url         | string    | not null
 image_url   | string    | not null
