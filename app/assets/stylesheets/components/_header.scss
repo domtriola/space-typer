@@ -9,26 +9,6 @@ header {
   padding: 10px 20px;
 }
 
-.user-menu {
-  position: relative;
-}
-
-.dropdown {
-  position: absolute;
-  top: 60px;
-  left: -10px;
-  color: #333;
-
-  li {
-    padding: 5px 10px;
-    border: 1px solid #666;
-  }
-}
-
-.user-icon {
-  width: 50px;
-  fill: #fff;
-}
 
 /* Logo
 ************/
@@ -40,3 +20,34 @@ header {
 
 /* User Menu
 ************/
+
+.user-menu {
+  position: relative;
+
+  .user-icon {
+    width: 32px;
+    fill: #fff;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    background-color: $transparent-background;
+    color: #333;
+
+    li {
+      padding: 5px 10px;
+      border: 1px solid #666;
+    }
+
+    a {
+      color: #333;
+    }
+  }
+  .dropdown.active {
+    display: block;
+  }
+}

@@ -4,6 +4,9 @@ import { Link } from 'react-router';
 class UserMenu extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = { active: false };
+    this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
   componentWillUpdate() {
@@ -19,11 +22,18 @@ class UserMenu extends React.Component {
       this.props.router.push("/login");
   }
 
+  toggleDropdown() {
+    this.setState({ active: !this.state.active });
+  }
+
   render() {
     return (
       <div className="user-menu">
-        <img className="user-icon" src="assets/iconmonstr-user-5.svg" />
-        <ul className="dropdown">
+        <img
+          className="user-icon"
+          src="assets/iconmonstr-user-5.svg"
+          onClick={this.toggleDropdown} />
+        <ul className={this.state.active ? "dropdown active" : "dropdown"}>
           <li>
             <Link to={`users/${this.props.currentUser.id}`}>Profile</Link>
           </li>
