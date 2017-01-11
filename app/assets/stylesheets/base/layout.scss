@@ -2,6 +2,25 @@ body {
   background: url("/assets/stary.jpg");
 }
 
+h1 {
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: blue;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -10,8 +29,17 @@ main {
   min-height: 400px;
 }
 
+input {
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+
 input[type="text"],
 input[type="password"] {
-  border: 1px solid #666;
   padding: 4px;
+}
+
+.errors {
+  margin-bottom: 10px;
+  color: red;
 }

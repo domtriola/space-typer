@@ -1,4 +1,5 @@
 import React from 'react';
+import SessionFooter from './session_footer.jsx';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -26,31 +27,46 @@ class SessionForm extends React.Component {
     this.props.processForm({ user });
   }
 
+  demoLogin(e) {
+    e.preventDefault();
+    let user = { username: "a", password: "testing" };
+    // TODO: test
+    console.log("test");
+  }
+
   render() {
+    const text = this.props.formType === "login" ? "Log In" : "Sign Up";
+
     return (
-      <form onSubmit={this.handleSubmit} className="session-form">
-        <ul>
-          {this.props.errors.map((err, i) => <li key={i}>{err}</li>)}
-        </ul>
+      <div className="session-form">
+        <h2>{text}</h2>
 
-        <label> Username:<br />
-          <input type="text"
-            value={this.state.username}
-            onChange={this.update("username")} />
-        </label>
+        <form onSubmit={this.handleSubmit}>
+          <ul className="errors">
+            {this.props.errors.map((err, i) => <li key={i}>{err}</li>)}
+          </ul>
 
-        <br />
+          <label> Username:<br />
+            <input type="text"
+              value={this.state.username}
+              onChange={this.update("username")} />
+          </label>
 
-        <label> Password:<br />
-          <input type="password"
-            value={this.state.password}
-            onChange={this.update("password")} />
-        </label>
+          <br />
 
-        <br />
+          <label> Password:<br />
+            <input type="password"
+              value={this.state.password}
+              onChange={this.update("password")} />
+          </label>
 
-        <input type="submit" value="Submit" />
-      </form>
+          <br />
+
+          <input type="submit" value="Submit" />
+        </form>
+
+        <SessionFooter text={text} demoLogin={this.demoLogin}/>
+      </div>
     );
   }
 }

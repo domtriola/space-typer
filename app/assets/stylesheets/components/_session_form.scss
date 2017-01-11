@@ -1,5 +1,12 @@
 .session-form {
-  text-align: center;
+  color: #333;
+  background-color: rgba(240, 240, 240, 0.6);
+  padding: 40px 50px;
+  border-radius: 10px;
+
+  h2 {
+    text-align: center;
+  }
 
   label {
     display: block;
@@ -8,5 +15,25 @@
 
   input[type="submit"] {
     padding: 10px 20px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  footer {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+
+    p {
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+    button {
+      color: blue;
+    }
+  }
+
+  button, a {
+    display: inline-block;
   }
 }
