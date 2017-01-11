@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = { username: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentDidUpdate() {
@@ -30,8 +31,7 @@ class SessionForm extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     let user = { username: "a", password: "testing" };
-    // TODO: test
-    console.log("test");
+    this.props.login({ user });
   }
 
   render() {
