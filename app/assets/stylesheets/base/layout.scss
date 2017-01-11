@@ -29,6 +29,7 @@ main {
   min-height: 400px;
 }
 
+
 input {
   border: 1px solid #666;
   border-radius: 5px;
@@ -37,6 +38,10 @@ input {
 input[type="text"],
 input[type="password"] {
   padding: 4px;
+}
+
+.container {
+  background-color: $transparent-background;
 }
 
 .errors {
