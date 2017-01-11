@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './header/header.jsx';
 
-const App = ({ children }) => (
+const App = ({ children, router }) => (
   <div>
-    <Header />
+    <Header router={router} />
     { children }
   </div>
 );

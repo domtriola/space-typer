@@ -3,9 +3,15 @@ import React from 'react';
 class UserMenu extends React.Component {
   constructor(props) {
     super(props);
-    // TODO: test
-    console.log(props.currentUser);
-    console.log(this.props.logout);
+  }
+
+  componentDidUpdate() {
+    this.redirectUnlessLoggedIn();
+  }
+
+  redirectUnlessLoggedIn() {
+    if (!this.props.currentUser)
+      this.props.router.push("/login");
   }
 
   render() {
