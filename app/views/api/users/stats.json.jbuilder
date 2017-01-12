@@ -1,5 +1,3 @@
-@scores.each do |score|
-  json.set! score.id do
-    json.extract! score, :wpm
-  end
-end
+json.extract! @stats,
+              :avg_wpm, :avg_last_ten, :max_wpm, :total_races,
+              :total_won
