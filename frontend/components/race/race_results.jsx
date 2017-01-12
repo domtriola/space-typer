@@ -1,4 +1,6 @@
 import React from 'react';
+import QuoteInfo from './quote_info.jsx';
+import UserInfo from './user_info.jsx';
 
 class RaceResults extends React.Component {
   constructor(props) {
@@ -7,12 +9,9 @@ class RaceResults extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>That was a quote from:</p>
-        <a href={this.props.quote.url}>{this.props.quote.title}</a>
-        <a href={this.props.quote.url}>
-          <img className="quote-img" src={this.props.quote.image_url} />
-        </a>
+      <div className="race-results">
+        <QuoteInfo quote={this.props.quote}/>
+        <UserInfo />
       </div>
     );
   }
