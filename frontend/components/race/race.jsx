@@ -15,6 +15,7 @@ class Race extends React.Component {
       userInput: ""
     };
 
+    this.updateInput = this.updateInput.bind(this);
   }
 
   componentDidMount() {
@@ -32,11 +33,21 @@ class Race extends React.Component {
     });
   }
 
-  update(field) {
-    return e => {
-      e.preventDefault();
-      this.setState({ [field]: e.target.value });
-    };
+  updateInput(e) {
+    e.preventDefault();
+    if (e.target.value === `${this.state.current} `) {
+      this.state.finished.push(this.state.current);
+      this.state.current = this.state.remaining.shift();
+      this.state.userInput = "";
+
+      this.setState({
+        finished: this.state.finished,
+        current: this.state.current,
+        remaining: this.state.remaining
+      });
+    } else {
+      this.setState({ userInput: e.target.value });
+    }
   }
 
   render() {
@@ -46,14 +57,16 @@ class Race extends React.Component {
         </div>
         <div className="race-text">
           {this.state.finished.join(" ")}{" "}
-          {this.state.current}{" "}
+          <span className="current-word">
+            {this.state.current}
+          </span>{" "}
           {this.state.remaining.join(" ")}
         </div>
         <div className="race-input">
           <input
             type="text"
             value={this.state.userInput}
-            onChange={this.update('userInput')} />
+            onChange={this.updateInput} />
         </div>
       </div>
     );
