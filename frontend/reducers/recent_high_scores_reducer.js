@@ -6,7 +6,7 @@ const SessionReducer = (state = [], action) => {
 
   switch (action.type) {
     case RECEIVE_LEADERBOARD_SCORES:
-      return [...state, ...action.scores];
+      return action.scores;
     default:
       return state;
   }
