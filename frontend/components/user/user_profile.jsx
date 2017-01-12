@@ -1,4 +1,5 @@
 import React from 'react';
+import UserStatsContainer from './user_stats_container';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -8,10 +9,7 @@ class UserProfile extends React.Component {
   render() {
     return(
       <div className="container">
-        <h2>Stats</h2>
-        <ul>
-          
-        </ul>
+        <UserStatsContainer />
       </div>
     );
   }

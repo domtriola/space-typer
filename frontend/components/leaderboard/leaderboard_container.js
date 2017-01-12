@@ -3,9 +3,6 @@ import Leaderboard from './leaderboard.jsx';
 import { fetchLeaderBoardScores } from
   '../../actions/recent_leaderboard_actions';
 
-// TODO
-window.fetchLeaderBoardScores = fetchLeaderBoardScores;
-
 const mapStateToProps = ({ recentHighScores }) => ({
   scores: recentHighScores
 });

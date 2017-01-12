@@ -9,5 +9,5 @@ export const receiveUserStats = stats => ({
 
 export const fetchUserStats = id => dispatch => (
   APIUtil.fetchUserStats(id)
-    .then(stats => receiveUserStats(stats))
+    .then(stats => dispatch(receiveUserStats(stats)))
 );
