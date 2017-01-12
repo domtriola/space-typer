@@ -59,7 +59,7 @@ class Race extends React.Component {
 
   render() {
     return(
-      <div className="container">
+      <div className="race container">
         <div className="race-track">
         </div>
         <div className="race-text">
