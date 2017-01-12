@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app.jsx';
 import SessionFormContainer from './session/session_form_container';
 import Home from './home/home';
+import RaceContainer from './race/race_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -32,6 +33,9 @@ const Root = ({ store }) => {
           <Route path="/signup"
             component={SessionFormContainer}
             onEnter={_redirectIfLoggedIn} />
+          <Route path="/race"
+            component={RaceContainer}
+            onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>
