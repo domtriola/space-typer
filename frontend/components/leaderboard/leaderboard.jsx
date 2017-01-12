@@ -20,11 +20,16 @@ class Leaderboard extends React.Component {
     return (
       <div className="leaderboard container">
         <h2>Recent High Scores</h2>
-        <ul>
+        <table>
+          <tr>
+            <th>User</th>
+            <th>WPM</th>
+            <th>Time Ago</th>
+          </tr>
           {this.state.scores.map((score, i) => (
             <Score key={i} score={score} />
           ))}
-        </ul>
+        </table>
       </div>
     );
   }
