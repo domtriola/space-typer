@@ -1,18 +1,19 @@
 class Api::ScoresController < ApplicationController
   def index
-    # TODO: get recent high scores
+    @scores = Score.order(:created_at, :wpm).limit(10)
+      .sort { |x, y| y.wpm <=> x.wpm }
   end
 
   def create
-    score = Score.new(score_params)
-    if score.save!
-      render json: score
+    @score = Score.new(score_params)
+    if @score.save!
+      render :show
     end
   end
 
   private
 
   def score_params
-    params.require(:score).permit(:wpm, :user_id, :quote_id)
+    params.require(:score).permit(:wpm, :won, :user_id, :quote_id)
   end
 end
