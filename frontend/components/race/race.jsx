@@ -1,4 +1,5 @@
 import React from 'react';
+import RaceResults from './race_results';
 
 class Race extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Race extends React.Component {
       moons: [false, false, false, false, false],
       over: false,
       won: false,
-      quote: "",
+      quote: {},
       finished: [],
       current: "",
       remaining: [],
@@ -34,8 +35,10 @@ class Race extends React.Component {
   }
 
   updateInput(e) {
+    let lastChar = this.state.remaining.length > 0 ? " " : "";
+
     e.preventDefault();
-    if (e.target.value === `${this.state.current} `) {
+    if (e.target.value === `${this.state.current}${lastChar}`) {
       this.state.finished.push(this.state.current);
       this.state.current = this.state.remaining.shift();
       this.state.userInput = "";
@@ -47,6 +50,10 @@ class Race extends React.Component {
       });
     } else {
       this.setState({ userInput: e.target.value });
+    }
+
+    if (this.state.remaining.length === 0 && !this.state.current) {
+      this.setState({ over: true });
     }
   }
 
@@ -68,6 +75,8 @@ class Race extends React.Component {
             value={this.state.userInput}
             onChange={this.updateInput} />
         </div>
+
+        {this.state.over ? <RaceResults quote={this.state.quote} /> : ""}
       </div>
     );
   }

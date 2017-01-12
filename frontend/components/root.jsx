@@ -6,6 +6,7 @@ import App from './app.jsx';
 import SessionFormContainer from './session/session_form_container';
 import Home from './home/home';
 import RaceContainer from './race/race_container';
+import RaceResults from './race/race_results.jsx';
 import UserProfileContainer from './user/user_profile_container';
 
 const Root = ({ store }) => {

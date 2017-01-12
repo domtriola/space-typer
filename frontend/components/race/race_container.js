@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import Race from './race.jsx';
 import { fetchRandomQuote } from '../../actions/quote_actions';
 
-const mapStateToProps = ({ quote }) => ({
-  quote
+const mapStateToProps = ({ quote }, { children }) => ({
+  quote,
+  children
 });
 
 const mapDispatchToProps = dispatch => ({
