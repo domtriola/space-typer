@@ -9,7 +9,7 @@ class UserProfile extends React.Component {
   render() {
     return(
       <div className="container">
-        <UserStatsContainer />
+        <UserStatsContainer params={this.props.params}/>
       </div>
     );
   }

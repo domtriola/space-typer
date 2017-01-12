@@ -8,7 +8,7 @@ class UserStats extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchStats(1);
+    this.props.fetchStats(this.props.params.id);
   }
 
   componentWillReceiveProps(newProps) {

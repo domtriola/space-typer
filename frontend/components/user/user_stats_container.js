@@ -3,8 +3,10 @@ import UserStats from './user_stats.jsx';
 import { fetchUserStats } from
   '../../actions/user_stats_actions';
 
-const mapStateToProps = ({ userStats }) => ({
-  stats: userStats
+const mapStateToProps = ({ session, userStats }, { params }) => ({
+  currentUser: session.currentUser,
+  stats: userStats,
+  params
 });
 
 const mapDispatchToProps = dispatch => ({
