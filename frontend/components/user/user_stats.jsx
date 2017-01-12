@@ -11,7 +11,15 @@ class UserStats extends React.Component {
     this.props.fetchStats(this.props.params.id);
   }
 
+  componentWillUnmount() {
+    this.props.fetchStats(this.props.params.id);
+  }
+
   componentWillReceiveProps(newProps) {
+    if (this.props.currentUser.id !== newProps.params.id) {
+      this.props.fetchStats(this.props.params.id);
+    }
+    
     this.setState(newProps.stats);
   }
 
