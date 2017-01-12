@@ -1,12 +1,15 @@
 import React from 'react';
 import RaceResults from './race_results';
+import RaceTrack from './race_track.jsx';
+import RaceText from './race_text.jsx';
+import RaceInput from './race_input.jsx';
 
 class Race extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      moons: [false, false, false, false, false],
+      moons: [0, 0, 0, 0, 0],
       over: false,
       won: false,
       quote: {},
@@ -60,21 +63,16 @@ class Race extends React.Component {
   render() {
     return(
       <div className="race container">
-        <div className="race-track">
-        </div>
-        <div className="race-text">
-          {this.state.finished.join(" ")}{" "}
-          <span className="current-word">
-            {this.state.current}
-          </span>{" "}
-          {this.state.remaining.join(" ")}
-        </div>
-        <div className="race-input">
-          <input
-            type="text"
-            value={this.state.userInput}
-            onChange={this.updateInput} />
-        </div>
+        <RaceTrack moons={this.state.moons}/>
+        <RaceText
+          finished={this.state.finished}
+          current={this.state.current}
+          remaining={this.state.remaining} />
+        <RaceInput
+          userInput={this.state.userInput}
+          updateInput={this.updateInput} />
+
+        <RaceResults quote={this.state.quote} />
 
         {this.state.over ? <RaceResults quote={this.state.quote} /> : ""}
       </div>
