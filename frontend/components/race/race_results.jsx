@@ -15,7 +15,10 @@ class RaceResults extends React.Component {
         <UserInfo
           scores={this.props.quote.userScores}
           userScore={this.props.userScore} />
-        <Scores scores={this.props.quote.highScores} user={true} />
+        <div>
+          <h2>All Time High Scores</h2>
+          <Scores scores={this.props.quote.highScores} user={true} />
+        </div>
       </div>
     );
   }

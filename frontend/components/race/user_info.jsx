@@ -7,7 +7,7 @@ const UserInfo = ({ scores, userScore }) => (
     <p>WPM: {userScore.wpm}</p>
     <p>Place: {userScore.won}</p>
 
-    <p>Previous Scores for this Quote:</p>
+    <h3>Previous Scores</h3>
     <Scores scores={scores} user={false} />
   </div>
 );

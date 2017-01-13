@@ -21,7 +21,10 @@ class Home extends React.Component {
     return (
       <div className="home">
         <Link to="/race" className="race-btn">Race</Link>
-        <Scores scores={this.state.scores} user={true} />
+        <div className="container">
+          <h2>Recent High Scores</h2>
+          <Scores scores={this.state.scores} user={true} />
+        </div>
       </div>
     );
   }
