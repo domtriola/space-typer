@@ -12,8 +12,8 @@ class UserStats extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.props.currentUser.id !== newProps.params.id) {
-      this.props.fetchStats(this.props.params.id);
+    if (this.props.params.id !== newProps.params.id) {
+      this.props.fetchStats(newProps.params.id);
     }
 
     this.setState(newProps.stats);
