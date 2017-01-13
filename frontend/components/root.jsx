@@ -8,6 +8,7 @@ import Home from './home/home';
 import RaceContainer from './race/race_container';
 import RaceResults from './race/race_results.jsx';
 import UserProfileContainer from './user/user_profile_container';
+import Disclaimer from './disclaimer/disclaimer.jsx';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -41,6 +42,7 @@ const Root = ({ store }) => {
           <Route path="/users/:id"
             component={UserProfileContainer}
             onEnter={_ensureLoggedIn} />
+          <Route path="/disclaimer" component={Disclaimer}/>
         </Route>
       </Router>
     </Provider>

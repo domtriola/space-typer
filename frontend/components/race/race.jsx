@@ -72,8 +72,6 @@ class Race extends React.Component {
           userInput={this.state.userInput}
           updateInput={this.updateInput} />
 
-        <RaceResults quote={this.state.quote} />
-
         {this.state.over ? <RaceResults quote={this.state.quote} /> : ""}
       </div>
     );

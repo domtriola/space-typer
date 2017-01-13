@@ -22,14 +22,18 @@ a {
   color: blue;
 }
 
+p {
+  padding-bottom: 10px;
+}
+
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
+  min-height: 600px;
+  margin: 50px;
 }
-
 
 input {
   border: 1px solid #666;
