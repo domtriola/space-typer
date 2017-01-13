@@ -15,7 +15,7 @@ class Race extends React.Component {
       compShips: [0, 0],
       over: false,
       won: false,
-      quote: {},
+      quote: this.props.quote,
       finished: [],
       current: "",
       remaining: [],
@@ -111,6 +111,7 @@ class Race extends React.Component {
           userInput={this.state.userInput}
           updateInput={this.updateInput} />
 
+        <RaceResults quote={this.state.quote} />
         {this.state.over ? <RaceResults quote={this.state.quote} /> : ""}
       </div>
     );
