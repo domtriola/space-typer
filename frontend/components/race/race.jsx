@@ -10,6 +10,8 @@ class Race extends React.Component {
 
     this.state = {
       moons: [0, 0, 0, 0, 0],
+      playerShip: 0,
+      compShips: [0, 0],
       over: false,
       won: false,
       quote: {},
@@ -75,7 +77,10 @@ class Race extends React.Component {
   render() {
     return(
       <div className="race container">
-        <RaceTrack moons={this.state.moons}/>
+        <RaceTrack
+          moons={this.state.moons}
+          compShips={this.state.compShips}
+          playerShip={this.state.playerShip} />
         <RaceText
           finished={this.state.finished}
           current={this.state.current}
