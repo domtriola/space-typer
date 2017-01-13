@@ -25,6 +25,7 @@ class Race extends React.Component {
     };
 
     this.updateInput = this.updateInput.bind(this);
+    this.raceResults = this.raceResults.bind(this);
   }
 
   componentDidMount() {
@@ -96,6 +97,15 @@ class Race extends React.Component {
     });
   }
 
+  // TODO: hard-coded for now
+  raceResults() {
+    return (
+      <RaceResults
+        quote={this.state.quote}
+        userScore={{ won: this.state.won, wpm: 20 }} />
+    );
+  }
+
   render() {
     return(
       <div className="race container">
@@ -111,7 +121,7 @@ class Race extends React.Component {
           userInput={this.state.userInput}
           updateInput={this.updateInput} />
 
-        {this.state.over ? <RaceResults quote={this.state.quote} /> : ""}
+        {this.state.over ? this.raceResults() : ""}
       </div>
     );
   }
