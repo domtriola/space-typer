@@ -90,8 +90,8 @@ class Race extends React.Component {
       score: {
         wpm: wordCount / min,
         won: this.state.won,
-        user_id: 1,
-        quote_id: 1
+        user_id: this.props.session.currentUser.id,
+        quote_id: this.props.quote.id
       }
     });
   }
@@ -111,7 +111,6 @@ class Race extends React.Component {
           userInput={this.state.userInput}
           updateInput={this.updateInput} />
 
-        <RaceResults quote={this.state.quote} />
         {this.state.over ? <RaceResults quote={this.state.quote} /> : ""}
       </div>
     );
