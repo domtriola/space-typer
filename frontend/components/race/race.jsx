@@ -24,6 +24,7 @@ class Race extends React.Component {
 
   componentDidMount() {
     this.props.fetchRandomQuote();
+    this.countDown();
   }
 
   componentWillReceiveProps(newProps) {
@@ -38,25 +39,36 @@ class Race extends React.Component {
   }
 
   updateInput(e) {
-    let lastChar = this.state.remaining.length > 0 ? " " : "";
+    if (this.state.moons.every(moon => moon === 1)) {
+      let lastChar = this.state.remaining.length > 0 ? " " : "";
 
-    e.preventDefault();
-    if (e.target.value === `${this.state.current}${lastChar}`) {
-      this.state.finished.push(this.state.current);
-      this.state.current = this.state.remaining.shift();
-      this.state.userInput = "";
+      e.preventDefault();
+      if (e.target.value === `${this.state.current}${lastChar}`) {
+        this.state.finished.push(this.state.current);
+        this.state.current = this.state.remaining.shift();
+        this.state.userInput = "";
 
-      this.setState({
-        finished: this.state.finished,
-        current: this.state.current,
-        remaining: this.state.remaining
-      });
-    } else {
-      this.setState({ userInput: e.target.value });
+        this.setState({
+          finished: this.state.finished,
+          current: this.state.current,
+          remaining: this.state.remaining
+        });
+      } else {
+        this.setState({ userInput: e.target.value });
+      }
+
+      if (this.state.remaining.length === 0 && !this.state.current) {
+        this.setState({ over: true });
+      }
     }
+  }
 
-    if (this.state.remaining.length === 0 && !this.state.current) {
-      this.setState({ over: true });
+  countDown() {
+    for (let i = 0; i < this.state.moons.length; i++) {
+      setTimeout(() => {
+        this.state.moons[i] = 1;
+        this.setState({ moons: this.state.moons });
+      }, i * 1000);
     }
   }
 

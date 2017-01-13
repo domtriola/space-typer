@@ -9,12 +9,29 @@
 /* Race Track
 *******************/
 
+.race-track {
+  margin-bottom: 50px;
+}
+
+.moons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.moon {
+  width: 60px;
+}
+
 .current-word {
   color: $green;
 }
 
 /* Race Input
 *******************/
+
+.race-text {
+  margin-bottom: 20px;
+}
 
 /* Race Results
 *******************/
