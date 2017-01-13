@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Leaderboard from './leaderboard.jsx';
+import Home from './home.jsx';
 import { fetchLeaderBoardScores } from
   '../../actions/recent_leaderboard_actions';
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Leaderboard);
+)(Home);

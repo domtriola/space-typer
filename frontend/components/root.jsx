@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app.jsx';
 import SessionFormContainer from './session/session_form_container';
-import Home from './home/home';
+import HomeContainer from './home/home_container';
 import RaceContainer from './race/race_container';
 import RaceResults from './race/race_results.jsx';
 import UserProfileContainer from './user/user_profile_container';
@@ -28,7 +28,7 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute
-            component={Home}
+            component={HomeContainer}
             onEnter={_ensureLoggedIn} />
           <Route path="/login"
             component={SessionFormContainer}
