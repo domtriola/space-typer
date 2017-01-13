@@ -11,15 +11,11 @@ class UserStats extends React.Component {
     this.props.fetchStats(this.props.params.id);
   }
 
-  componentWillUnmount() {
-    this.props.fetchStats(this.props.params.id);
-  }
-
   componentWillReceiveProps(newProps) {
     if (this.props.currentUser.id !== newProps.params.id) {
       this.props.fetchStats(this.props.params.id);
     }
-    
+
     this.setState(newProps.stats);
   }
 
@@ -31,11 +27,11 @@ class UserStats extends React.Component {
           <tbody>
             <tr>
               <td>AVG All Time</td>
-              <td>{this.state.avg_wpm}</td>
+              <td>{Math.floor(this.state.avg_wpm)}</td>
             </tr>
             <tr>
               <td>AVG Last Ten</td>
-              <td>{this.state.avg_last_ten}</td>
+              <td>{Math.floor(this.state.avg_last_ten)}</td>
             </tr>
             <tr>
               <td>Max WPM</td>
