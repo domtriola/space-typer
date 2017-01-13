@@ -1,6 +1,10 @@
 .race-btn {
-  font-size: 36px;
-  padding: 20px 40px;
-  background-color: #fff;
-  border-radius: 10px;
+  color: white;
+  font-family: $orbitron;
+  text-transform: uppercase;
+  font-size: 38px;
+  padding: 86px 132px 76px 88px;
+  background: url('/assets/spaceship_large.png') no-repeat;
+  background-size: 300px;
+  margin: 50px 0 80px;
 }

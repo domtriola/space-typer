@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Logo = () => (
-  <div className="logo">
-    <a href="/">SpaceTyper</a>
-  </div>
+  <a href="/">
+    <img className="logo" src="/assets/SpaceTyper_logo.png" />
+  </a>
 );
 
 export default Logo;

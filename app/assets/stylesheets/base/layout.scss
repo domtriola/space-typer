@@ -1,6 +1,12 @@
 body {
-  background: url("/assets/stary.jpg");
-  font-family: $play;
+  background: url("/assets/Night_sky.png") no-repeat center center;
+  background-size: cover; 
+  font-family: $open-sans;
+  color: $night-blue;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $orbitron;
 }
 
 h1 {

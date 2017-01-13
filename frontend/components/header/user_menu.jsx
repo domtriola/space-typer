@@ -31,7 +31,7 @@ class UserMenu extends React.Component {
       <div className="user-menu">
         <img
           className="user-icon"
-          src="assets/iconmonstr-user-5.svg"
+          src="assets/astronaut.png"
           onClick={this.toggleDropdown} />
         <ul className={this.state.active ? "dropdown active" : "dropdown"}>
           <li>
