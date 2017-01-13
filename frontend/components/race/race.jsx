@@ -3,6 +3,7 @@ import RaceResults from './race_results';
 import RaceTrack from './race_track.jsx';
 import RaceText from './race_text.jsx';
 import RaceInput from './race_input.jsx';
+import { createScore } from '../../util/stats_api_util';
 
 class Race extends React.Component {
   constructor(props) {
@@ -18,7 +19,9 @@ class Race extends React.Component {
       finished: [],
       current: "",
       remaining: [],
-      userInput: ""
+      userInput: "",
+      startTime: null,
+      finishTime: null
     };
 
     this.updateInput = this.updateInput.bind(this);
@@ -42,6 +45,9 @@ class Race extends React.Component {
 
   updateInput(e) {
     if (this.state.moons.every(moon => moon === 1)) {
+      if (!this.state.startTime)
+        this.setState({ startTime: Date.now() });
+
       let lastChar = this.state.remaining.length > 0 ? " " : "";
 
       e.preventDefault();
@@ -61,6 +67,9 @@ class Race extends React.Component {
 
       if (this.state.remaining.length === 0 && !this.state.current) {
         this.setState({ over: true });
+        this.setState({ finishTime: Date.now() }, () => {
+          this.submitScore(this.state.finishTime - this.state.startTime);
+        });
       }
     }
   }
@@ -70,8 +79,21 @@ class Race extends React.Component {
       setTimeout(() => {
         this.state.moons[i] = 1;
         this.setState({ moons: this.state.moons });
-      }, i * 1000);
+      }, (i + 1) * 800);
     }
+  }
+
+  submitScore(time) {
+    const min = time / 60000;
+    const wordCount = this.state.finished.length;
+    return createScore({
+      score: {
+        wpm: wordCount / min,
+        won: this.state.won,
+        user_id: 1,
+        quote_id: 1
+      }
+    });
   }
 
   render() {
