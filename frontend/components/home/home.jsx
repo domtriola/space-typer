@@ -1,5 +1,5 @@
 import React from 'react';
-import Leaderboard from '../leaderboard/leaderboard.jsx';
+import Scores from '../scores/scores.jsx';
 import { Link } from 'react-router';
 
 class Home extends React.Component {
@@ -21,7 +21,7 @@ class Home extends React.Component {
     return (
       <div className="home">
         <Link to="/race" className="race-btn">Race</Link>
-        <Leaderboard scores={this.state.scores} />
+        <Scores scores={this.state.scores} user={true} />
       </div>
     );
   }

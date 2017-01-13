@@ -1,4 +1,5 @@
 import React from 'react';
+import Scores from '../scores/scores.jsx';
 
 const UserInfo = ({ scores, userScore }) => (
   <div className="user-info">
@@ -6,23 +7,8 @@ const UserInfo = ({ scores, userScore }) => (
     <p>WPM: {userScore.wpm}</p>
     <p>Place: {userScore.won}</p>
 
-    Previous Scores for this Quote:
-    <table>
-      <thead>
-        <th>
-          <td>WPM</td>
-          <td>Time Ago</td>
-        </th>
-      </thead>
-      <tbody>
-        {scores.map((score, i) => (
-          <tr>
-            <td>{score.wpm}</td>
-            <td>{score.created_at}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <p>Previous Scores for this Quote:</p>
+    <Scores scores={scores} user={false} />
   </div>
 );
 
