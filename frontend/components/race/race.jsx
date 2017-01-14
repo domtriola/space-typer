@@ -128,7 +128,6 @@ class Race extends React.Component {
             updateInput={this.updateInput} />
         </div>
         <div className="container">
-          {this.raceResults()}
           {this.state.over ? this.raceResults() : null}
         </div>
       </div>
