@@ -10,7 +10,7 @@ class RaceResults extends React.Component {
 
   render() {
     return (
-      <div className="race-results">
+      <div className="race-results container">
         <QuoteInfo quote={this.props.quote} />
         <UserInfo
           scores={this.props.quote.userScores}
