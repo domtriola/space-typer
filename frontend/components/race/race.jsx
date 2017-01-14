@@ -113,20 +113,24 @@ class Race extends React.Component {
 
   render() {
     return(
-      <div className="race container">
-        <RaceTrack
-          moons={this.state.moons}
-          compShips={this.state.compShips}
-          playerShip={this.state.playerShip} />
-        <RaceText
-          finished={this.state.finished}
-          current={this.state.current}
-          remaining={this.state.remaining} />
-        <RaceInput
-          userInput={this.state.userInput}
-          updateInput={this.updateInput} />
-
-        {this.state.over ? this.raceResults() : null}
+      <div>
+        <div className="race">
+          <RaceTrack
+            moons={this.state.moons}
+            compShips={this.state.compShips}
+            playerShip={this.state.playerShip} />
+          <RaceText
+            finished={this.state.finished}
+            current={this.state.current}
+            remaining={this.state.remaining} />
+          <RaceInput
+            userInput={this.state.userInput}
+            updateInput={this.updateInput} />
+        </div>
+        <div className="container">
+          {this.raceResults()}
+          {this.state.over ? this.raceResults() : null}
+        </div>
       </div>
     );
   }

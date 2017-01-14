@@ -1,6 +1,6 @@
 body {
   background: url("/assets/Night_sky.png") no-repeat center center;
-  background-size: cover; 
+  background-size: cover;
   font-family: $open-sans;
   color: $night-blue;
 }
@@ -52,7 +52,7 @@ input[type="password"] {
 }
 
 .container {
-  background-color: $transparent-background;
+  background-color: $white;
   padding: 20px;
 }
 
