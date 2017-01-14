@@ -21,11 +21,13 @@ class Race extends React.Component {
       remaining: [],
       userInput: "",
       startTime: null,
-      finishTime: null
+      finishTime: null,
+      userWPM: null
     };
 
     this.updateInput = this.updateInput.bind(this);
     this.raceResults = this.raceResults.bind(this);
+    this.submitScore = this.submitScore.bind(this);
   }
 
   componentDidMount() {
@@ -69,7 +71,8 @@ class Race extends React.Component {
       if (this.state.remaining.length === 0 && !this.state.current) {
         this.setState({ over: true });
         this.setState({ finishTime: Date.now() }, () => {
-          this.submitScore(this.state.finishTime - this.state.startTime);
+          this.submitScore(this.state.finishTime - this.state.startTime)
+            .then(console.log);
         });
       }
     }
@@ -87,6 +90,7 @@ class Race extends React.Component {
   submitScore(time) {
     const min = time / 60000;
     const wordCount = this.state.finished.length;
+    this.setState({ userWPM: Math.floor(wordCount / min) });
     return createScore({
       score: {
         wpm: wordCount / min,
@@ -97,12 +101,13 @@ class Race extends React.Component {
     });
   }
 
-  // TODO: hard-coded for now
   raceResults() {
     return (
       <RaceResults
         quote={this.state.quote}
-        userScore={{ won: this.state.won, wpm: 20 }} />
+        userScore={{
+          won: '',
+          wpm: this.state.userWPM }} />
     );
   }
 
