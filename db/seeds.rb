@@ -45,7 +45,7 @@ Quote.create!(
 
 Quote.create!(
   title: "Mostly Harmless",
-  body: "When it’s fall in New York, the air smells as if someone’s been frying goats in it, and if you are keen to breathe, the best plan is to open a window and stick your head in a building.",
+  body: "When it's fall in New York, the air smells as if someone's been frying goats in it, and if you are keen to breathe, the best plan is to open a window and stick your head in a building.",
   url: "https://www.amazon.com/gp/product/0345418778/ref=as_li_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0345418778&linkId=87f73cd3179466e6a2488b81584172f8",
   image_url: "http://ecx.images-amazon.com/images/I/51aRCqbDyVL.jpg")
 
@@ -105,7 +105,7 @@ Quote.create!(
 
 Quote.create!(
   title: "The Restaurant at the End of the Universe",
-  body: "I’ve never met all these people you speak of. And neither, I suspect, have you. They only exist in words we hear. It is folly to say you know what is happening to other people. Only they know, if they exist. They have their own Universes of their eyes and ears.",
+  body: "I've never met all these people you speak of. And neither, I suspect, have you. They only exist in words we hear. It is folly to say you know what is happening to other people. Only they know, if they exist. They have their own Universes of their eyes and ears.",
   url: "https://www.amazon.com/gp/product/0345391810/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0345391810&linkId=83774f66a5a406427e688dafaf8cec52",
   image_url: "https://images-na.ssl-images-amazon.com/images/I/5107Zfo3NBL._SX302_BO1,204,203,200_.jpg")
 
@@ -153,7 +153,7 @@ Quote.create!(
 
 Quote.create!(
   title: "Speaker for the Dead",
-  body: "When you really know somebody you can’t hate them. Or maybe it’s just that you can’t really know them until you stop hating them.",
+  body: "When you really know somebody you can't hate them. Or maybe it's just that you can't really know them until you stop hating them.",
   url: "https://www.amazon.com/gp/product/0812550757/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0812550757&linkId=abcd39fbbf8ba86f15d564e33a6ea2a9",
   image_url: "https://images-na.ssl-images-amazon.com/images/I/416MZVezL3L.jpg")
 
