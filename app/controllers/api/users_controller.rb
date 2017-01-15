@@ -34,6 +34,8 @@ class Api::UsersController < ApplicationController
             scores
           WHERE
             user_id = ?
+          ORDER BY
+            created_at DESC
           LIMIT 10
         ) last_ten
       SQL
