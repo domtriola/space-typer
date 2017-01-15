@@ -1,7 +1,6 @@
 import React from 'react';
 import Moon from './moon.jsx';
-import PlayerShip from './player_ship.jsx';
-import CompShip from './comp_ship.jsx';
+import Ship from './ship.jsx';
 
 const colorPaths = ["spaceship_orange.png",
                     "spaceship_blue.png"];
@@ -17,12 +16,18 @@ const RaceTrack = ({ moons, playerShip, compShips }) => (
     </h4>
     <div className="track">
       <ul className="ships">
-        <PlayerShip pos={playerShip} />
-        {compShips.map((ship, i) => (
-          <CompShip
-            colorPath={colorPaths[i]}
-            key={i} pos={ship} />
-        ))}
+        <Ship
+          yPos="0"
+          xPos={playerShip}
+          colorPath="spaceship_red.png" />
+        <Ship
+          yPos="63.13"
+          xPos={compShips[0]}
+          colorPath="spaceship_orange.png" />
+        <Ship
+          yPos="126.25"
+          xPos={compShips[1]}
+          colorPath="spaceship_blue.png" />
       </ul>
       <div className="planet">
         <img src="/assets/earth.png" />

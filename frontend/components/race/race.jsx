@@ -59,10 +59,14 @@ class Race extends React.Component {
         this.state.current = this.state.remaining.shift();
         this.state.userInput = "";
 
+        const length = this.state.quote.body.split(" ").length;
+        this.state.playerShip = this.state.finished.length / length * 100;
+
         this.setState({
           finished: this.state.finished,
           current: this.state.current,
-          remaining: this.state.remaining
+          remaining: this.state.remaining,
+          playerShip: this.state.playerShip
         });
       } else {
         this.setState({ userInput: e.target.value });

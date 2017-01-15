@@ -39,11 +39,12 @@
 
 .ships, .planet {
   position: absolute;
+  width: 540px;
 }
 
 .ship {
   width: 50px;
-  margin: 20px 0;
+  position: absolute;
 }
 
 .planet {
