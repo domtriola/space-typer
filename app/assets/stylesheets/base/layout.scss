@@ -6,7 +6,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $teal;
+  color: $white;
   font-family: $poiret-one;
   text-transform: uppercase;
 }
@@ -27,7 +27,7 @@ h3 {
 }
 
 a {
-  color: blue;
+  color: $dark-orange;
 }
 
 p {
@@ -54,13 +54,17 @@ input[type="password"] {
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
   background-color: #fff;
+  width: 100%;
 
+  th {
+    color: #fff;
+    background-color: $dark-orange;
+    border: 2px solid $dark-orange;
+    text-align: center;
+  }
   td {
     text-align: center;
-    padding: 5px 80px;
     border: 2px solid #bbb;
   }
 }
@@ -68,6 +72,10 @@ table {
 .container {
   background-color: $white;
   padding: 30px;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $teal;
+  }
 }
 
 .errors {

@@ -42,16 +42,39 @@
   padding: 20px;
 }
 
+.race-input input {
+  width: 100%;
+}
+.race-input input:focus {
+  outline-color: $teal;
+  outline-width: 10px;
+  outline-offset: -3px;
+}
+
 /* Race Results
 *******************/
 
 .race-results {
   margin-top: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   max-width: 800px;
+  text-align: center;
 }
 
-.quote-info img {
-  width: 230px;
+.quote-results {
+  margin-bottom: 80px;
+
+  a {
+    font-size: 20px;
+  }
+  img {
+    max-width: 230px;
+    margin: 16px auto 0;
+  }
+
+  .user-info > div {
+    margin-top: 40px;
+  }
 }

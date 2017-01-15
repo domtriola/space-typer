@@ -127,6 +127,7 @@ class Race extends React.Component {
             userInput={this.state.userInput}
             updateInput={this.updateInput} />
         </div>
+
         {this.state.over ? this.raceResults() : null}
       </div>
     );

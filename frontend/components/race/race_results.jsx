@@ -11,12 +11,14 @@ class RaceResults extends React.Component {
   render() {
     return (
       <div className="race-results container">
-        <QuoteInfo quote={this.props.quote} />
-        <UserInfo
-          scores={this.props.quote.userScores}
-          userScore={this.props.userScore} />
-        <div>
-          <h2>All Time High Scores</h2>
+        <div className="quote-results">
+          <QuoteInfo quote={this.props.quote} />
+          <UserInfo
+            scores={this.props.quote.userScores}
+            userScore={this.props.userScore} />
+        </div>
+        <div className="high-scores">
+          <h3>All Time High Scores</h3>
           <Scores scores={this.props.quote.highScores} user={true} />
         </div>
       </div>
