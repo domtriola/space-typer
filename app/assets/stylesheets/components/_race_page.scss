@@ -3,7 +3,7 @@
 
 .race {
   margin: 50px;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 /* Race Track
@@ -11,6 +11,7 @@
 
 .race-track {
   margin-bottom: 30px;
+  width: 700px;
 }
 
 .moons {
@@ -21,12 +22,34 @@
 }
 
 .moon {
-  width: 60px;
+  width: 70px;
+}
+
+.begin-text {
+  height: 10px;
+  margin: 20px 0;
+  text-align: center;
+  color: $orange;
+}
+
+.track {
+  position: relative;
+  height: 160px;
+}
+
+.ships, .planet {
+  position: absolute;
 }
 
 .ship {
-  width: 30px;
+  width: 50px;
   margin: 20px 0;
+}
+
+.planet {
+  width: 100px;
+  top: 25%;
+  right: 0;
 }
 
 .current-word {
@@ -36,9 +59,13 @@
 /* Race Input
 *******************/
 
+.race-text, .race-input {
+  width: 600px;
+  margin: 0 auto 30px;
+}
+
 .race-text {
   background-color: $white;
-  margin-bottom: 30px;
   padding: 20px;
 }
 

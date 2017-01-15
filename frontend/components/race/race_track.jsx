@@ -11,14 +11,23 @@ const RaceTrack = ({ moons, playerShip, compShips }) => (
     <ul className="moons">
       {moons.map((moon, i) => <Moon key={i} moon={moon} />)}
     </ul>
-    <ul className="ships">
-      <PlayerShip pos={playerShip} />
-      {compShips.map((ship, i) => (
-        <CompShip
-          colorPath={colorPaths[i]}
-          key={i} pos={ship} />
-      ))}
-    </ul>
+    <h4 className="begin-text">
+      {moons.every(moon => moon === 1) ?
+        "" : "Begin Typing When the Moons are Full"}
+    </h4>
+    <div className="track">
+      <ul className="ships">
+        <PlayerShip pos={playerShip} />
+        {compShips.map((ship, i) => (
+          <CompShip
+            colorPath={colorPaths[i]}
+            key={i} pos={ship} />
+        ))}
+      </ul>
+      <div className="planet">
+        <img src="/assets/earth.png" />
+      </div>
+    </div>
   </div>
 );
 
