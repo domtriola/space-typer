@@ -43,6 +43,7 @@ class Api::UsersController < ApplicationController
       avg_last_ten = avg_last_ten.first.avg
 
       @stats = {
+        username: user.username,
         avg_wpm: user_stats.avg_wpm,
         avg_last_ten: avg_last_ten,
         max_wpm: user_stats.max_wpm,
