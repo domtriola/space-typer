@@ -1,6 +1,6 @@
 class Api::ScoresController < ApplicationController
   def index
-    @scores = Score.includes(:user).order('created_at DESC', :wpm)
+    @scores = Score.includes(:user).order('created_at DESC')
       .limit(10).sort { |x, y| y.wpm <=> x.wpm }
   end
 
