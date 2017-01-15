@@ -7,8 +7,9 @@ const SessionFooter = ({ text, demoLogin }) => {
 
   return (
     <footer>
+      {text === 'Log In' ? null :
+        <button onClick={demoLogin}>Demo Log In</button>}
       <Link to={link}>{text}</Link>
-      <button onClick={demoLogin}>Demo</button>
     </footer>
   );
 };
