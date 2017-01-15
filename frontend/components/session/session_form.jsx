@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
             {this.props.errors.map((err, i) => <li key={i}>{err}</li>)}
           </ul>
 
-          <label> Username:<br />
+          <label>Username<br />
             <input type="text"
               value={this.state.username}
               onChange={this.update("username")} />
@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
 
           <br />
 
-          <label> Password:<br />
+          <label>Password<br />
             <input type="password"
               value={this.state.password}
               onChange={this.update("password")} />
@@ -62,8 +62,12 @@ class SessionForm extends React.Component {
 
           <br />
 
-          <input type="submit" value="Submit" />
+          <input type="submit" value={text} />
         </form>
+
+        <h3>
+          {text === 'Log In' ? "New to Space Typer?" : "Have an account?"}
+        </h3>
 
         <SessionFooter text={text} demoLogin={this.demoLogin}/>
       </div>

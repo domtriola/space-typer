@@ -1,35 +1,50 @@
 .session-form {
-  color: #333;
-  background-color: $white;
+  color: $white;
   padding: 40px 50px;
   border-radius: 10px;
 
   h2 {
+    margin-bottom: 20px;
+  }
+
+  h2, h3 {
     text-align: center;
+  }
+
+  h3 {
+    margin: 40px 0 20px;
   }
 
   label {
     display: block;
     text-align: left;
+    font-size: 16px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 320px;
   }
 
   input[type="submit"] {
-    padding: 10px 20px;
+    padding: 4px 40px;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto 0;
+    color: $teal;
   }
 
   footer {
     display: block;
-    margin-top: 20px;
     text-align: center;
 
     p {
       font-style: italic;
       margin-bottom: 5px;
     }
-    button {
-      color: blue;
+    a, button {
+      color: $white;
+      text-decoration: underline;
+      margin: 0 20px;
     }
   }
 
