@@ -89,7 +89,7 @@ class Race extends React.Component {
       setTimeout(() => {
         this.state.moons[i] = 1;
         this.setState({ moons: this.state.moons });
-      }, (i + 1) * 800);
+      }, (i + 1) * 850);
     }
   }
 
