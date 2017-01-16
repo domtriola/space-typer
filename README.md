@@ -4,6 +4,8 @@
 
 [Documentation](./docs)
 
+![Race Page](./docs/images/race_page.png)
+
 ## About
 
 SpaceTyper is a TypeRacer inspired typing app. SpaceTyper is a typing game where the first player to finish typing a provided quote wins.
