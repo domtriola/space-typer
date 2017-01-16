@@ -31,7 +31,22 @@ class SessionForm extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     let user = { username: "Mysterious Traveler", password: "password" };
-    this.props.login({ user });
+    let time = 0;
+
+    const setNextChar = (field, i) => {
+      time += 50;
+      
+      setTimeout(() => {
+        this.setState({ [field]: this.state[field] + user[field][i] });
+        if (field === "password" && user[field][i] === "d")
+        this.props.login({ user });
+      }, time);
+    };
+
+    Object.keys(user).forEach(key => {
+      for (let i = 0; i < user[key].length; i++)
+        setNextChar(key, i);
+    });
   }
 
   render() {
