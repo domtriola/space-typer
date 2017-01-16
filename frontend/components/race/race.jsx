@@ -20,6 +20,7 @@ class Race extends React.Component {
       current: "",
       remaining: [],
       userInput: "",
+      status: true,
       startTime: null,
       finishTime: null,
       userWPM: null
@@ -48,6 +49,8 @@ class Race extends React.Component {
   }
 
   updateInput(e) {
+    e.preventDefault();
+
     if (this.state.moons.every(moon => moon === 1)) {
       const length = this.state.quote.body.split(" ").length;
 
@@ -58,7 +61,6 @@ class Race extends React.Component {
 
       let lastChar = this.state.remaining.length > 0 ? " " : "";
 
-      e.preventDefault();
       if (e.target.value === `${this.state.current}${lastChar}`) {
         this.state.finished.push(this.state.current);
         this.state.current = this.state.remaining.shift();
@@ -73,6 +75,11 @@ class Race extends React.Component {
         });
       } else {
         this.setState({ userInput: e.target.value });
+
+        if (this.state.current.indexOf(e.target.value) !== 0)
+          this.setState({ status: false });
+        else
+          this.setState({ status: true });
       }
 
       if (this.state.remaining.length === 0 && !this.state.current) {
@@ -152,10 +159,12 @@ class Race extends React.Component {
           <RaceText
             finished={this.state.finished}
             current={this.state.current}
-            remaining={this.state.remaining} />
+            remaining={this.state.remaining}
+            status={this.state.status} />
           <RaceInput
             userInput={this.state.userInput}
-            updateInput={this.updateInput} />
+            updateInput={this.updateInput}
+            status={this.state.status} />
         </div>
 
         {this.state.over ? this.raceResults() : null}
