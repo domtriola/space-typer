@@ -1,4 +1,5 @@
 import React from 'react';
+import Standings from './standings.jsx';
 import RaceResults from './race_results';
 import RaceTrack from './race_track.jsx';
 import RaceText from './race_text.jsx';
@@ -13,6 +14,7 @@ class Race extends React.Component {
       moons: [0, 0, 0, 0, 0],
       playerShip: 0,
       compShips: [0, 0],
+      compWPMs: [null, null],
       over: false,
       won: false,
       quote: this.props.quote,
@@ -105,6 +107,8 @@ class Race extends React.Component {
       Math.floor(Math.random() * 55) + 15,
       Math.floor(Math.random() * 55) + 15
     ];
+    this.setState({ compWPMs: shipsWPM });
+
     for (let i = 0; i < shipsWPM.length; i++) {
       if (Math.floor(Math.random() * 3) === 2)
         shipsWPM[i] += Math.floor(Math.random() * 60);
@@ -148,10 +152,19 @@ class Race extends React.Component {
     );
   }
 
+  standings() {
+    return (
+      <Standings
+        userWPM={this.state.userWPM}
+        compWPMs={this.state.compWPMs} />
+    );
+  }
+
   render() {
     return(
       <div>
         <div className="race">
+          {this.state.over ? this.standings() : null}
           <RaceTrack
             moons={this.state.moons}
             compShips={this.state.compShips}
