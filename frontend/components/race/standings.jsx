@@ -10,7 +10,7 @@ const Standings = ({ userWPM, compWPMs }) => {
 
   return (
     <div className="standings container">
-      <h3>{places[wpms.indexOf(userWPM)]} Place!</h3>
+      <h3>{places[wpms.indexOf(userWPM)]} Place</h3>
       <table>
         <thead>
           <tr>
@@ -26,12 +26,12 @@ const Standings = ({ userWPM, compWPMs }) => {
             <td>{places[wpms.indexOf(userWPM)]}</td>
           </tr>
           <tr>
-            <td>Comp One</td>
+            <td>Orange</td>
             <td>{compWPMs[0]}</td>
             <td>{places[wpms.indexOf(compWPMs[0])]}</td>
           </tr>
           <tr>
-            <td>Comp Two</td>
+            <td>Teal</td>
             <td>{compWPMs[1]}</td>
             <td>{places[wpms.indexOf(compWPMs[1])]}</td>
           </tr>
