@@ -22,7 +22,7 @@ class Home extends React.Component {
       <div className="home">
         <Link to="/race" className="race-btn">Race</Link>
         <div className="container">
-          <h2>Recent High Scores</h2>
+          <h2>Recent Scores</h2>
           <Scores scores={this.state.scores} user={true} />
         </div>
       </div>
