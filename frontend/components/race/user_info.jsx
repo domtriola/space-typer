@@ -5,7 +5,7 @@ const UserInfo = ({ scores, userScore }) => (
   <div className="user-info col col-1-2">
     <h3>Your Stats for this Quote</h3>
     <p>WPM: {userScore.wpm}</p>
-    <p>Place: {userScore.won}</p>
+    <p>Place: {userScore.place}</p>
 
     <div>
       <h3>Previous Scores</h3>

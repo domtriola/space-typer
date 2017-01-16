@@ -1,12 +1,7 @@
 import React from 'react';
 
-const Standings = ({ userWPM, compWPMs }) => {
+const Standings = ({ userWPM, compWPMs, wpms }) => {
   const places = ["First", "Second", "Third"];
-  const wpms = [userWPM, ...compWPMs].sort((x, y) => {
-    if (x < y) return 1;
-    else if (x > y) return -1;
-    else return 0;
-  });
 
   return (
     <div className="standings container">

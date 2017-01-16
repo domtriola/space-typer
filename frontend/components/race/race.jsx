@@ -25,7 +25,8 @@ class Race extends React.Component {
       status: true,
       startTime: null,
       finishTime: null,
-      userWPM: null
+      userWPM: null,
+      wpms: [null, null, null]
     };
 
     this.updateInput = this.updateInput.bind(this);
@@ -131,7 +132,17 @@ class Race extends React.Component {
   submitScore(time) {
     const min = time / 60000;
     const wordCount = this.state.finished.length;
-    this.setState({ userWPM: Math.floor(wordCount / min) });
+    this.setState({ userWPM: Math.floor(wordCount / min) }, () => {
+      this.setState(
+        { wpms:
+          [this.state.userWPM, ...this.state.compWPMs].sort((x, y) => {
+            if (x < y) return 1;
+            else if (x > y) return -1;
+            else return 0;
+          })
+        }
+      );
+    });
     return createScore({
       score: {
         wpm: wordCount / min,
@@ -143,11 +154,13 @@ class Race extends React.Component {
   }
 
   raceResults() {
+    const places = ["First", "Second", "Third"];
+
     return (
       <RaceResults
         quote={this.state.quote}
         userScore={{
-          won: '',
+          place: places[this.state.wpms.indexOf(this.state.userWPM)],
           wpm: this.state.userWPM }} />
     );
   }
@@ -156,7 +169,8 @@ class Race extends React.Component {
     return (
       <Standings
         userWPM={this.state.userWPM}
-        compWPMs={this.state.compWPMs} />
+        compWPMs={this.state.compWPMs}
+        wpms={this.state.wpms} />
     );
   }
 
