@@ -28,6 +28,7 @@ class Race extends React.Component {
     this.updateInput = this.updateInput.bind(this);
     this.raceResults = this.raceResults.bind(this);
     this.submitScore = this.submitScore.bind(this);
+    this.startCompShips = this.startCompShips.bind(this);
   }
 
   componentDidMount() {
@@ -48,8 +49,12 @@ class Race extends React.Component {
 
   updateInput(e) {
     if (this.state.moons.every(moon => moon === 1)) {
-      if (!this.state.startTime)
+      const length = this.state.quote.body.split(" ").length;
+
+      if (!this.state.startTime) {
         this.setState({ startTime: Date.now() });
+        this.startCompShips(length);
+      }
 
       let lastChar = this.state.remaining.length > 0 ? " " : "";
 
@@ -58,8 +63,6 @@ class Race extends React.Component {
         this.state.finished.push(this.state.current);
         this.state.current = this.state.remaining.shift();
         this.state.userInput = "";
-
-        const length = this.state.quote.body.split(" ").length;
         this.state.playerShip = this.state.finished.length / length * 100;
 
         this.setState({
@@ -75,8 +78,7 @@ class Race extends React.Component {
       if (this.state.remaining.length === 0 && !this.state.current) {
         this.setState({ over: true });
         this.setState({ finishTime: Date.now() }, () => {
-          this.submitScore(this.state.finishTime - this.state.startTime)
-            .then(console.log);
+          this.submitScore(this.state.finishTime - this.state.startTime);
         });
       }
     }
@@ -88,6 +90,26 @@ class Race extends React.Component {
         this.state.moons[i] = 1;
         this.setState({ moons: this.state.moons });
       }, (i + 1) * 800);
+    }
+  }
+
+  startCompShips(quoteLength) {
+    const shipsWPM = [
+      Math.floor(Math.random() * 90) + 15,
+      Math.floor(Math.random() * 90) + 15
+    ];
+
+    for (let i = 0; i < shipsWPM.length; i++) {
+      let totalTime = 1 / (shipsWPM[i] / quoteLength) * 60000;
+      let interval = totalTime / quoteLength;
+      let dist = interval / totalTime * 100;
+
+      for (let j = 0; j < quoteLength; j++) {
+        setTimeout(() => {
+          this.state.compShips[i] += dist;
+          this.setState({ compShips: this.state.compShips });
+        }, j * interval);
+      }
     }
   }
 
