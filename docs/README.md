@@ -6,15 +6,15 @@
 
 ## Minimum Viable Product
 
-SpaceTyper is a Typeracer inspired typing app. SpaceTyper is a typing game where the first player to finish typing a provided quote wins. The minimum viable product is outlined below:
+SpaceTyper is a TypeRacer inspired typing app. SpaceTyper is a typing game where the first player to finish typing a provided quote wins. The minimum viable product is outlined below:
 
-- [ ] [Hosting on Heroku][live]
+- [x] [Hosting on Heroku][live]
 - [ ] [Production README](../README.md)
-- [ ] User Authentication: Account creation, user sessions, and demo login
-- [ ] Users race against randomly generated computer racers with varying words per minute speeds
-- [ ] Users have a profile page with stats
-- [ ] Home page leaderboard with most recent high-scores
-- [ ] All-time leaderboards for each quote
+- [x] User Authentication: Account creation, user sessions, and demo login
+- [x] Users race against randomly generated computer racers with varying words per minute speeds
+- [x] Users have a profile page with stats
+- [x] Home page leaderboard with most recent high-scores
+- [x] All-time leaderboards for each quote
 
 ## Design Docs
 * [View Wireframes](./wireframes)
