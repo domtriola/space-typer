@@ -110,12 +110,6 @@ Quote.create!(
   image_url: "https://images-na.ssl-images-amazon.com/images/I/5107Zfo3NBL._SX302_BO1,204,203,200_.jpg")
 
 Quote.create!(
-  title: "The Restaurant at the End of the Universe",
-  body: "The average Vogon will not think twice before doing something so pointlessly hideous to you that you will wish you had never been born—or (if you are a clearer minded thinker) that the Vogon had never been born.",
-  url: "https://www.amazon.com/gp/product/0345391810/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0345391810&linkId=83774f66a5a406427e688dafaf8cec52",
-  image_url: "https://images-na.ssl-images-amazon.com/images/I/5107Zfo3NBL._SX302_BO1,204,203,200_.jpg")
-
-Quote.create!(
   title: "Life, the Universe and Everything",
   body: "\"The Guide says there is an art to flying\", said Ford, \"or rather a knack. The knack lies in learning how to throw yourself at the ground and miss.\"",
   url: "https://www.amazon.com/gp/product/0345391829/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0345391829&linkId=43c2757397d2be68fa11e2866ce9db56",
