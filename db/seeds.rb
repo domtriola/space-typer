@@ -159,7 +159,7 @@ Quote.create!(
 
 Quote.create!(
   title: "Speaker for the Dead",
-  body: "\"The humans build their stupid fence to keep us out, but that is nothing. The sky is our fence!\" Human leapt upward—startlingly high, for his legs were powerful. \"Look how the fence throws me back down to the ground!\"",
+  body: "\"The humans build their stupid fence to keep us out, but that is nothing. The sky is our fence!\" Human leapt upward--startlingly high, for his legs were powerful. \"Look how the fence throws me back down to the ground!\"",
   url: "https://www.amazon.com/gp/product/0812550757/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0812550757&linkId=abcd39fbbf8ba86f15d564e33a6ea2a9",
   image_url: "https://images-na.ssl-images-amazon.com/images/I/416MZVezL3L.jpg")
 
