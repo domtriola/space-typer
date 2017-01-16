@@ -95,9 +95,13 @@ class Race extends React.Component {
 
   startCompShips(quoteLength) {
     const shipsWPM = [
-      Math.floor(Math.random() * 90) + 15,
-      Math.floor(Math.random() * 90) + 15
+      Math.floor(Math.random() * 55) + 15,
+      Math.floor(Math.random() * 55) + 15
     ];
+    for (let i = 0; i < shipsWPM.length; i++) {
+      if (Math.floor(Math.random() * 3) === 2)
+        shipsWPM[i] += Math.floor(Math.random() * 60);
+    }
 
     for (let i = 0; i < shipsWPM.length; i++) {
       let totalTime = 1 / (shipsWPM[i] / quoteLength) * 60000;
