@@ -123,7 +123,7 @@ Quote.create!(
 
 Quote.create!(
   title: "Life, the Universe and Everything",
-  body: "Zaphod did not want to tangle with them and, deciding that just as discretion is the better part of valor, so was cowardice is the better part of discretion, he valiantly hid himself in a closet.",
+  body: "Zaphod did not want to tangle with them and, deciding that just as discretion is the better part of valor, so was cowardice the better part of discretion, he valiantly hid himself in a closet.",
   url: "https://www.amazon.com/gp/product/0345391829/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0345391829&linkId=43c2757397d2be68fa11e2866ce9db56",
   image_url: "https://images-na.ssl-images-amazon.com/images/I/51kmFF-4oBL._SX302_BO1,204,203,200_.jpg")
 
