@@ -12,6 +12,7 @@
 
 - `POST /api/users`
 - `GET /api/users/:id`
+  - retrieves user with pre-calculated stats
 
 ### Session
 

@@ -5,75 +5,48 @@
  - App
   * HeaderContainer
   * HomeContainer
+  * SessionFormContainer
   * RaceContainer
-  * ProfileContainer
+  * UserProfileContainer
 
+### Header
 **HeaderContainer**
  - Header
   * Logo
-  * UserMenu
+  * UserMenuContainer
+
+**UserMenuContainer**
+ - UserMenu
 
 ### Home
 **HomeContainer**
  - Home
-  * RaceButton
-  * LeaderBoardContainer
+  * Scores
 
-**LeaderBoardContainer**
- - LeaderBoard
-
-**LeaderBoardContainer**
- - LeaderBoard
-
-### Auth
-**AuthFormContainer**
- - AuthForm
+### Session
+**SessionFormContainer**
+ - SessionForm
 
 ### Race
 **RaceContainer**
  - Race
-  * RaceTrackContainer
-  * RaceInputContainer
-  * RaceResultsContainer
+  * Standings
+  * RaceTrack
+  * RaceText
+  * RaceInput
+  * RaceResults
 
-**RaceTrackContainer**
- - RaceTrack
-  * ShipContainer
-
-**ShipContainer**
- - Ship
- - Ship
- - Ship
-
-**RaceInputContainer**
- - RaceInput
-
-**RaceResultsContainer**
- - QuoteContainer
- - UserResultsContainer
- - LeaderBoardContainer
-
-**QuoteContainer**
- - Quote
-
-**UserResultsContainer**
- - UserResults
-
-### Profile
+### User Profile
 **UserProfileContainer**
  - UserProfile
-  * UserStatsContainer
-
-**UserStatsContainer**
- - UserStats
+  * UserStats
 
 ## Routes
 
-|Path   | Component   |
-|-------|-------------|
-| "/" | "HomeContainer" |
-| "/sign-up" | "AuthFormContainer" |
-| "/login" | "AuthFormContainer" |
-| "/race" | "RaceContainer" |
-| "/race/results" | "RaceResultsContainer" |
+| Path        | Component              |
+|-------------|------------------------|
+| "/"         | "HomeContainer"        |
+| "/sign-up"  | "SessionFormContainer" |
+| "/login"    | "SessionFormContainer" |
+| "/race"     | "RaceContainer"        |
 | "/user/:id" | "UserProfileContainer" |
