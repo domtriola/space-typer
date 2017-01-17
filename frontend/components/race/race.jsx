@@ -163,7 +163,8 @@ class Race extends React.Component {
         userScore={{
           place: this.places[
             this.state.wpms.indexOf(this.state.userWPM)],
-          wpm: this.state.userWPM }} />
+          wpm: this.state.userWPM }}
+        username={this.props.session.currentUser.username}/>
     );
   }
 
