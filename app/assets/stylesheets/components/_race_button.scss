@@ -11,4 +11,6 @@
 .race-btn:hover {
   background: url('/assets/spaceship_large_red.png') no-repeat;
   background-size: 300px;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
 }
