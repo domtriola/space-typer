@@ -16,7 +16,7 @@ class Race extends React.Component {
       compShips: [0, 0],
       compWPMs: [null, null],
       over: false,
-      won: false,
+      place: "",
       quote: this.props.quote,
       finished: [],
       current: "",
@@ -28,6 +28,8 @@ class Race extends React.Component {
       userWPM: null,
       wpms: [null, null, null]
     };
+
+    this.places = ["First", "Second", "Third"];
 
     this.updateInput = this.updateInput.bind(this);
     this.raceResults = this.raceResults.bind(this);
@@ -133,34 +135,34 @@ class Race extends React.Component {
     const min = time / 60000;
     const wordCount = this.state.finished.length;
     this.setState({ userWPM: Math.floor(wordCount / min) }, () => {
-      this.setState(
-        { wpms:
-          [this.state.userWPM, ...this.state.compWPMs].sort((x, y) => {
-            if (x < y) return 1;
-            else if (x > y) return -1;
-            else return 0;
-          })
-        }
-      );
-    });
-    return createScore({
-      score: {
-        wpm: wordCount / min,
-        won: this.state.won,
-        user_id: this.props.session.currentUser.id,
-        quote_id: this.props.quote.id
-      }
+      let sortedWPMs = [this.state.userWPM, ...this.state.compWPMs]
+        .sort((x, y) => {
+          if (x < y) return 1;
+          else if (x > y) return -1;
+          else return 0;
+        });
+
+      this.setState({ wpms: sortedWPMs }, () => {
+        createScore({
+          score: {
+            wpm: wordCount / min,
+            won: this.state.wpms.indexOf(this.state.userWPM) === 0
+              ? true : false,
+            user_id: this.props.session.currentUser.id,
+            quote_id: this.props.quote.id
+          }
+        });
+      });
     });
   }
 
   raceResults() {
-    const places = ["First", "Second", "Third"];
-
     return (
       <RaceResults
         quote={this.state.quote}
         userScore={{
-          place: places[this.state.wpms.indexOf(this.state.userWPM)],
+          place: this.places[
+            this.state.wpms.indexOf(this.state.userWPM)],
           wpm: this.state.userWPM }} />
     );
   }
@@ -170,7 +172,8 @@ class Race extends React.Component {
       <Standings
         userWPM={this.state.userWPM}
         compWPMs={this.state.compWPMs}
-        wpms={this.state.wpms} />
+        wpms={this.state.wpms}
+        places={this.places} />
     );
   }
 
