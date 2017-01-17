@@ -39,8 +39,7 @@ class Race extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchRandomQuote();
-    this.countDown();
+    this.props.fetchRandomQuote().then(res => this.countDown());
   }
 
   componentWillReceiveProps(newProps) {
