@@ -5,15 +5,23 @@ import Ship from './ship.jsx';
 const colorPaths = ["spaceship_orange.png",
                     "spaceship_blue.png"];
 
+const beforeRaceText = () => (
+  <div>
+    <h4 className="moon-text">Begin Typing When the Moons are Full</h4>
+    <p className="user-label">You</p>
+  </div>
+);
+
 const RaceTrack = ({ moons, playerShip, compShips }) => (
   <div className="race-track">
     <ul className="moons">
       {moons.map((moon, i) => <Moon key={i} moon={moon} />)}
     </ul>
-    <h4 className="begin-text">
-      {moons.every(moon => moon === 1) ?
-        "" : "Begin Typing When the Moons are Full"}
-    </h4>
+
+    <div className="begin-text">
+      {moons.every(moon => moon === 1) ? null : beforeRaceText()}
+    </div>
+
     <div className="track">
       <ul className="ships">
         <Ship

@@ -29,9 +29,20 @@
 .begin-text {
   height: 10px;
   margin: 20px 0;
-  text-align: center;
-  color: $orange;
+
+  .moon-text {
+    text-align: center;
+    color: $orange;
+  }
+
+  .user-label {
+    color: $white;
+    position: absolute;
+    left: 60px;
+    top: 124px;
+  }
 }
+
 
 .track {
   position: relative;
