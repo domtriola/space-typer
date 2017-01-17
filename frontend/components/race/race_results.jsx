@@ -19,7 +19,6 @@ class RaceResults extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    debugger;
     const wpm = newProps.userScore.wpm;
     this.state.highScores.forEach(score => {
       if (score.created_at === "just now")
@@ -31,22 +30,8 @@ class RaceResults extends React.Component {
       else return 0;
     });
 
-    this.setState({ highScores: this.state.highScores });
+    this.setState({ highScores: this.state.highScores.slice(0, 10) });
   }
-
-  // insertScore(score, highScores) {
-  //   // debugger;
-  //   for (let i = 0; i < highScores.length; i++) {
-  //     if (score.wpm >= highScores[i].wpm)
-  //       return highScores.splice(i, 0, score).splice(0, 10);
-  //   }
-  //
-  //   if (highScores.length < 10) {
-  //     highScores.push(score);
-  //     return highScores;
-  //   } else
-  //     return highScores;
-  // }
 
   render() {
     return (
