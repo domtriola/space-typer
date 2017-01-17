@@ -24,7 +24,6 @@ class Race extends React.Component {
       userInput: "",
       status: true,
       startTime: null,
-      finishTime: null,
       userWPM: null,
       wpms: [null, null, null]
     };
@@ -89,9 +88,7 @@ class Race extends React.Component {
 
       if (this.state.remaining.length === 0 && !this.state.current) {
         this.setState({ over: true });
-        this.setState({ finishTime: Date.now() }, () => {
-          this.submitScore(this.state.finishTime - this.state.startTime);
-        });
+        this.submitScore(Date.now() - this.state.startTime);
       }
     }
   }
