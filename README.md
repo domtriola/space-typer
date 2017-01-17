@@ -41,7 +41,49 @@ When a user first visits the site they are served a page with a current user (if
 
 Users enter typing races and compete against computer players with random words per minute speeds. When the race is complete the user's score is posted to the database.
 
-The race is contained within a component that has access to the Redux store and keeps track of its own race-related state. The Race component is also responsible for setting up all of the time-related events.
+The race is contained within a component that has access to the Redux store and keeps track of its own race-related state. The Race component is also responsible for setting up and performing most of the time and sequence dependent events.
+
+Because a significant amount of the SpaceTyper app relies on asynchronous behavior, there were a couple of challenges that I faced when I tried to set up the correct order of events and proper component rendering.
+
+The first challenge was ensuring that components didn't have to wait for asynchronous calls to render, but also did update when the asynchronous calls completed. I accomplished this by using default states and lifecycle methods.
+
+The second challenge was making state changes at the right time when the changes depended on other state changes. The setState function behaves asynchronously, but I found that I could pass callback functions to it, and those functions would execute after the state change was performed.
+
+The submitScore function demonstrates callback chaining in setState:
+```javascript
+submitScore(time) {
+  // Calculate time in minutes and word count for the quote
+  const min = time / 60000;
+  const wordCount = this.state.finished.length;
+
+  // Store the user's WPM speed in the component state
+  this.setState({ userWPM: Math.floor(wordCount / min) }, () => {
+    // then: sort the user's WPM with the computer wpm scores
+    let sortedWPMs = [this.state.userWPM, ...this.state.compWPMs]
+      .sort((x, y) => {
+        if (x < y) return 1;
+        else if (x > y) return -1;
+        else return 0;
+      });
+
+    // Store the sorted WPM scores in the component state
+    this.setState({ wpms: sortedWPMs }, () => {
+      // then: post the user's score to the database
+      createScore({
+        score: {
+          wpm: wordCount / min,
+          won: this.state.wpms.indexOf(this.state.userWPM) === 0
+            ? true : false,
+          user_id: this.props.session.currentUser.id,
+          quote_id: this.props.quote.id
+        }
+      });
+    });
+  });
+}
+```
+
+It is necessary to save the user's words per minute score and the sorted words per minute scores in the state, because child components depend on them to render the correct values. The user score to be submitted depends on both the user's WPM speed and the the user's finish place, and the user's finish place depends on the user's WPM speed. It is therefore convenient to setup a chain of events in which values are calculated and saved before moving on to the next calculation.
 
 ### User Stats
 

@@ -131,6 +131,7 @@ class Race extends React.Component {
   submitScore(time) {
     const min = time / 60000;
     const wordCount = this.state.finished.length;
+
     this.setState({ userWPM: Math.floor(wordCount / min) }, () => {
       let sortedWPMs = [this.state.userWPM, ...this.state.compWPMs]
         .sort((x, y) => {
