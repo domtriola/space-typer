@@ -28,12 +28,14 @@ class Race extends React.Component {
       wpms: [null, null, null]
     };
 
+    this.timers = [];
     this.places = ["First", "Second", "Third"];
 
     this.updateInput = this.updateInput.bind(this);
     this.raceResults = this.raceResults.bind(this);
     this.submitScore = this.submitScore.bind(this);
     this.startCompShips = this.startCompShips.bind(this);
+    this.countDown = this.countDown.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +51,12 @@ class Race extends React.Component {
       quote: newProps.quote,
       current: firstWord,
       remaining: text
+    });
+  }
+
+  componentWillUnmount() {
+    this.timers.forEach(timer => {
+      clearTimeout(timer);
     });
   }
 
@@ -95,10 +103,10 @@ class Race extends React.Component {
 
   countDown() {
     for (let i = 0; i < this.state.moons.length; i++) {
-      setTimeout(() => {
+      this.timers.push(setTimeout(() => {
         this.state.moons[i] = 1;
         this.setState({ moons: this.state.moons });
-      }, (i + 1) * 850);
+      }, (i + 1) * 850));
     }
   }
 
@@ -120,10 +128,10 @@ class Race extends React.Component {
       let dist = interval / totalTime * 100;
 
       for (let j = 0; j < quoteLength; j++) {
-        setTimeout(() => {
+        this.timers.push(setTimeout(() => {
           this.state.compShips[i] += dist;
           this.setState({ compShips: this.state.compShips });
-        }, j * interval);
+        }, j * interval));
       }
     }
   }
