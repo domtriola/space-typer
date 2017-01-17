@@ -18,7 +18,7 @@ This is a single page app built with Ruby on Rails and React. It uses a Redux st
 
 SpaceTyper uses session tokens and cookies to keep track of logged in users. User passwords are not stored directly in the database. The app converts them into password digests by attaching a salt to the raw password and running that through a hashing function. When a user logs in a session token is stored both in the database and as a cookie in the user's web browser. The front-end part of the application keeps track of the current user by setting the current user's id and username to the state.
 
-When a user first visits the site they are served a page with a current user if one exists and a root element that contains all of the front-end rendering:
+When a user first visits the site they are served a page with a current user (if they are logged in) and a root element that contains all of the front-end rendering:
 
 ```html
 <% if logged_in? %>
