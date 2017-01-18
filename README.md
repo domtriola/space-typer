@@ -20,7 +20,7 @@
 
 SpaceTyper is a TypeRacer inspired typing app, where the first player to finish typing a provided quote wins. This is a single page app built with Ruby on Rails and React. It uses a Redux state container to keep track of the front-end application state.
 
-[Ruby on Rails](http://rubyonrails.org/) allowed me to set up a CRUD cycle API that stores users, quotes, and scores in the database and provides access to that data as JSON. Setting up the backend interface as an API that responds with JSON allowed me to use the [React](https://facebook.github.io/react/) library to render all of the data as HTML and setup the front-end navigation and functionality. I used [Redux](http://redux.js.org/) to control the application state. The TypeRacer app has many components that need access to the application state and Redux establishes a single predictable container for that state.
+I used [Ruby on Rails](http://rubyonrails.org/) to set up a CRUD cycle API that stores users, quotes, and scores in the database and provides access to that data as JSON. Setting up the backend interface as an API that responds with JSON allowed me to use the [React](https://facebook.github.io/react/) library to render all of the data as HTML and setup the front-end navigation and functionality. I used [Redux](http://redux.js.org/) to control the application state. The TypeRacer app has many components that need access to the application state and Redux establishes a single predictable container for that state.
 
 ## Features
 
