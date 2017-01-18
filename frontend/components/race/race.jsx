@@ -57,6 +57,8 @@ class Race extends React.Component {
     this.timers.forEach(timer => {
       clearTimeout(timer);
     });
+
+    this.props.resetQuote();
   }
 
   updateInput(e) {

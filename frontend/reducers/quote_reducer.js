@@ -1,4 +1,5 @@
-import { RECEIVE_QUOTE, RECEIVE_USER_SCORE } from '../actions/quote_actions';
+import { RECEIVE_QUOTE, RECEIVE_USER_SCORE,
+         RESET_QUOTE } from '../actions/quote_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = Object.freeze({
@@ -17,6 +18,8 @@ const quoteReducer = (state = _defaultState, action) => {
   switch(action.type) {
     case RECEIVE_QUOTE:
       return action.quote;
+    case RESET_QUOTE:
+      return _defaultState;
     case RECEIVE_USER_SCORE:
       nextState.userScores.unshift(action.score);
       return nextState;

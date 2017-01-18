@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Race from './race.jsx';
-import { fetchRandomQuote } from '../../actions/quote_actions';
+import { fetchRandomQuote, resetQuote } from '../../actions/quote_actions';
 
 const mapStateToProps = ({ quote, session }, { children }) => ({
   quote,
@@ -9,7 +9,8 @@ const mapStateToProps = ({ quote, session }, { children }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchRandomQuote: () => dispatch(fetchRandomQuote())
+  fetchRandomQuote: () => dispatch(fetchRandomQuote()),
+  resetQuote: () => dispatch(resetQuote())
 });
 
 export default connect(
