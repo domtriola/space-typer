@@ -31,7 +31,14 @@ class SessionForm extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     this.setState({ username: "", password: "" });
-    let user = { username: "Mysterious Traveler", password: "password" };
+
+    const userNames = ["Anonymous Astronaut", "Nameless Explorer",
+                       "Unidentified Captain", "Incognito Adventurer",
+                       "Mysterious Traveler"];
+    let user = {
+      username: userNames[Math.floor(Math.random() * userNames.length)], 
+      password: "password"
+    };
     let time = 0;
 
     const setNextChar = (field, i) => {

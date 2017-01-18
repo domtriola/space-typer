@@ -7,6 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create!(username: "Mysterious Traveler", password: "password")
+User.create!(username: "Anonymous Astronaut", password: "password")
+User.create!(username: "Nameless Explorer", password: "password")
+User.create!(username: "Unidentified Captain", password: "password")
+User.create!(username: "Incognito Adventurer", password: "password")
 u2 = User.create!(username: "Arthur", password: "StavromulaB")
 u3 = User.create!(username: "Ford", password: "DontPanic!")
 u4 = User.create!(username: "Zaphod", password: "HeartOGold")
