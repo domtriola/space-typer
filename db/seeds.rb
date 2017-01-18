@@ -6,30 +6,30 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(username: "Mysterious Traveler", password: "password")
-User.create!(username: "Anonymous Astronaut", password: "password")
-User.create!(username: "Nameless Explorer", password: "password")
-User.create!(username: "Unidentified Captain", password: "password")
-User.create!(username: "Incognito Adventurer", password: "password")
-u2 = User.create!(username: "Arthur", password: "StavromulaB")
-u3 = User.create!(username: "Ford", password: "DontPanic!")
-u4 = User.create!(username: "Zaphod", password: "HeartOGold")
-u5 = User.create!(username: "Trillian", password: "ImprobableEarthling")
-u6 = User.create!(username: "Marvin", password: "0101010")
+u1 = User.create!(username: "Mysterious Traveler", password: "password")
+u2 = User.create!(username: "Anonymous Astronaut", password: "password")
+u3 = User.create!(username: "Nameless Explorer", password: "password")
+u4 = User.create!(username: "Unidentified Captain", password: "password")
+u5 = User.create!(username: "Incognito Adventurer", password: "password")
+u6 = User.create!(username: "Arthur", password: "StavromulaB")
+u7 = User.create!(username: "Ford", password: "DontPanic!")
+u8 = User.create!(username: "Zaphod", password: "HeartOGold")
+u9 = User.create!(username: "Trillian", password: "ImprobableEarthling")
+u10 = User.create!(username: "Marvin", password: "0101010")
 
-q1 = Quote.create!(
+Quote.create!(
   title: "Mostly Harmless",
   body: "Laser light flickered all over him as if he was a packet of biscuits at a super-market check-out.",
   url: "https://www.amazon.com/gp/product/0345418778/ref=as_li_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0345418778&linkId=87f73cd3179466e6a2488b81584172f8",
   image_url: "http://ecx.images-amazon.com/images/I/51aRCqbDyVL.jpg")
 
-q2 = Quote.create!(
+Quote.create!(
   title: "Mostly Harmless",
   body: "Everybody has their moment of great opportunity in life. If you happen to miss the one you care about, then everything else in life becomes eerily easy.",
   url: "https://www.amazon.com/gp/product/0345418778/ref=as_li_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0345418778&linkId=87f73cd3179466e6a2488b81584172f8",
   image_url: "http://ecx.images-amazon.com/images/I/51aRCqbDyVL.jpg")
 
-q3 = Quote.create!(
+Quote.create!(
   title: "Mostly Harmless",
   body: "One of the extraordinary things about life is the sort of places it's prepared to put up with living.",
   url: "https://www.amazon.com/gp/product/0345418778/ref=as_li_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0345418778&linkId=87f73cd3179466e6a2488b81584172f8",
@@ -173,22 +173,44 @@ Quote.create!(
   url: "https://www.amazon.com/gp/product/0812550757/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=spacetyper-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0812550757&linkId=abcd39fbbf8ba86f15d564e33a6ea2a9",
   image_url: "https://images-na.ssl-images-amazon.com/images/I/416MZVezL3L.jpg")
 
+[u1, u2, u3, u4, u5].each do |user|
+  20.times do
+    quote_id = 1 + rand(Quote.all.count - 1)
+    Score.create!(wpm: 30 + rand(40), won: rand(4) == 3 ? true : false,
+                  user_id: user.id, quote_id: quote_id)
+  end
+end
 
 # Arthur Scores
-Score.create!(wpm: 43, won: false, user_id: u2.id, quote_id: q1.id)
-Score.create!(wpm: 47, won: false, user_id: u2.id, quote_id: q2.id)
+20.times do
+  quote_id = 1 + rand(Quote.all.count - 1)
+  Score.create!(wpm: 30 + rand(30), won: false,
+                user_id: u6.id, quote_id: quote_id)
+end
 
 # Ford Scores
-Score.create!(wpm: 62, won: false, user_id: u3.id, quote_id: q2.id)
-Score.create!(wpm: 83, won: true, user_id: u3.id, quote_id: q3.id)
+15.times do
+  quote_id = 1 + rand(Quote.all.count - 1)
+  Score.create!(wpm: 55 + rand(30), won: rand(3) == 2 ? true : false,
+                user_id: u7.id, quote_id: quote_id)
+end
 
 # Zaphod Scores
-Score.create!(wpm: 25, won: true, user_id: u4.id, quote_id: q3.id)
-Score.create!(wpm: 35, won: true, user_id: u4.id, quote_id: q1.id)
+12.times do
+  quote_id = 1 + rand(Quote.all.count - 1)
+  Score.create!(wpm: 25 + rand(30), won: true,
+                user_id: u8.id, quote_id: quote_id)
+end
 
 # Trillian Scores
-Score.create!(wpm: 96, won: true, user_id: u5.id, quote_id: q1.id)
-Score.create!(wpm: 103, won: true, user_id: u5.id, quote_id: q2.id)
+10.times do
+  quote_id = 1 + rand(Quote.all.count - 1)
+  Score.create!(wpm: 55 + rand(50), won: rand(3) == 2 ? false : true,
+                user_id: u9.id, quote_id: quote_id)
+end
 
 # Marvin Scores
-Score.create!(wpm: 96327185, won: true, user_id: u6.id, quote_id: q3.id)
+Score.create!(wpm: 96327185, won: true, user_id: u10.id, quote_id: 3)
+
+# Randomize time ago
+Score.all.each { |score| score.update_attribute(:created_at, rand(9).days.ago) }
