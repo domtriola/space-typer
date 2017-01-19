@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ShootingStar from './shooting_star';
 
 class Stars extends React.Component {
   constructor() {
@@ -12,6 +12,7 @@ class Stars extends React.Component {
 
     this.stars = [];
     this.shootingStars = [];
+
     this.draw = this.draw.bind(this);
     this.zoom = this.zoom.bind(this);
     this.spawnShootingStar = this.spawnShootingStar.bind(this);
@@ -27,7 +28,8 @@ class Stars extends React.Component {
 
     this.setState({
       width: window.innerWidth,
-      height: window.innerHeight }, () => this.draw());
+      height: window.innerHeight
+    }, () => this.draw());
   }
 
   draw() {
@@ -43,14 +45,20 @@ class Stars extends React.Component {
       });
     }
 
-
     const ctx = this.refs.stars.getContext('2d');
     ctx.clearRect(0, 0, newWidth, newHeight);
 
-    this.cleanUp(this.stars);
+    this.cleanUp();
+    this.spawnShootingStar();
+    this.drawStars(ctx, this.stars, this.pan);
+    this.drawShootingStars(ctx);
 
+    requestAnimationFrame(this.draw);
+  }
+
+  drawStars(ctx, stars, movement) {
     this.stars.forEach(star => {
-      this.pan(star);
+      movement(star);
 
       ctx.strokeStyle = 'rgba(240, 240, 240, 0.8)';
       ctx.lineWidth = 1;
@@ -58,8 +66,6 @@ class Stars extends React.Component {
       ctx.arc(star.x, star.y, 1, 0, 2 * Math.PI);
       ctx.stroke();
     });
-
-    requestAnimationFrame(this.draw);
   }
 
   cleanUp() {
@@ -83,11 +89,15 @@ class Stars extends React.Component {
   }
 
   spawnShootingStar() {
-
+    if (Math.floor(Math.random() * 120) === 0)
+      this.shootingStars.push(new ShootingStar(this.MAX_X, this.MAX_Y));
   }
 
-  updateShootingStar() {
+  drawShootingStars(ctx) {
+    this.shootingStars = this.shootingStars.filter(star => star.alive);
 
+    if (this.shootingStars.length !== 0)
+      this.shootingStars.forEach(star => star.move(ctx));
   }
 
   zoom(star) {
@@ -110,9 +120,9 @@ class Stars extends React.Component {
     return (
       <div>
         <canvas
+          ref="stars"
           width={this.state.width}
           height={this.state.height}
-          ref="stars"
           className="stars"></canvas>
       </div>
     );
