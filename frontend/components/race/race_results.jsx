@@ -8,6 +8,7 @@ class RaceResults extends React.Component {
     super(props);
 
     const newScore = {
+      userId: this.props.userId,
       username: this.props.username,
       wpm: this.props.userScore.wpm,
       created_at: "just now"

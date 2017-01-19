@@ -171,6 +171,7 @@ class Race extends React.Component {
           place: this.places[
             this.state.wpms.indexOf(this.state.userWPM)],
           wpm: this.state.userWPM }}
+        userId={this.props.session.currentUser.id}
         username={this.props.session.currentUser.username}/>
     );
   }
