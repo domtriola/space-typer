@@ -42,7 +42,7 @@ A significant amount of the SpaceTyper app behaves asynchronously and depends on
 
 To make sure components would render smoothly I implemented default states and updated those states with lifecycle methods in the components.
 
-Lifecycle methods from the race component demonstrate asynchronous state updates followed by synchronous game-play actions:
+##### Lifecycle methods from the race component demonstrate asynchronous state updates followed by synchronous game-play actions:
 ```javascript
 // Fetch a random quote. After it's fetched start the race countdown
 componentDidMount() {
@@ -61,7 +61,7 @@ componentWillReceiveProps(newProps) {
   });
 }
 
-// When user navigates away clear timers and reset quote state
+// When the user navigates away clear timers and reset quote state
 componentWillUnmount() {
   this.timers.forEach(timer => {
     clearTimeout(timer);
@@ -73,7 +73,7 @@ componentWillUnmount() {
 
 Ensuring that state changes happened at the appropriate time was a challenge, because setState behaves asynchronously. I addressed this by passing callback functions to the setState calls, so that those functions would execute after the state change was performed.
 
-The submitScore function demonstrates callback chaining in setState:
+##### The submitScore function demonstrates callback chaining in setState:
 ```javascript
 submitScore(time) {
   // Calculate time in minutes and word count for the quote
@@ -113,17 +113,17 @@ It is necessary to save the user's words per minute score and the sorted words p
 
 ![Race Page](./docs/images/user_profile.png)
 
-Each time a user completes a race their score for the quote is saved to the database. The score only contains a words per minute value, whether or not they won, and foreign keys for the user and the quote it belongs to.
+Each time a user completes a race their score for the quote is saved to the database. The score only contains a words per minute value, a boolean value for whether or not they won, and foreign keys for the user and quote it belongs to.
 
 All of the statistics are calculated on the backend with SQL and/or Ruby and ActiveRecord before being sent to the front-end. I avoided using N+1 queries by retrieving all the information I needed in as few queries as possible.
 
-Fetching the most recent scores and ordering by WPM. Includes user to avoid N+1 queries:
+##### Fetching the most recent scores and ordering by WPM. Includes user to avoid N+1 queries:
 ```ruby
 @scores = Score.includes(:user).order('created_at DESC')
   .limit(10).sort { |x, y| y.wpm <=> x.wpm }
 ```
 
-Fetching a random quote and its associated scores:
+##### Fetching a random quote and its associated scores:
 ```ruby
 @quote = Quote.order("RANDOM()").first
 @scores = @quote.scores.where(user_id: current_user.id)
@@ -131,7 +131,7 @@ Fetching a random quote and its associated scores:
 @high_scores = @quote.scores.order('wpm DESC').limit(10)
 ```
 
-Some queries were easier to do using custom SQL queries. The user stats are calculated with SQL:
+##### Some queries were easier to do using custom SQL queries. The user stats are calculated with SQL:
 ```ruby
 # Get total races, average WPM, and max WPM
 user_stats = Score.find_by_sql([<<-SQL, user])
