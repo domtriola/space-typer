@@ -4,7 +4,6 @@
 header {
   background-color: $teal;
   color: #fff;
-  padding: 18px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,31 +12,51 @@ header {
       justify-content: space-between;
 }
 
-
 /* Logo
 ************/
 
 .logo {
+  padding: 18px 20px;
   width: 250px;
 }
 
-
-/* User Menu
+/* Menu
 ************/
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.menu > a {
+  color: #fff;
+  font-family: "Poiret One", sans-serif;
+  text-transform: uppercase;
+  margin-right: 10px;
+  padding: 18px 20px;
+}
 
 .user-menu {
   position: relative;
+  padding: 15px 0;
+  cursor: pointer;
 
   .user-icon {
     width: 38px;
+    margin-right: 20px;
     fill: #fff;
-    cursor: pointer;
   }
 
   .dropdown {
     display: none;
     position: absolute;
-    top: 56px;
+    top: 68px;
     left: -20px;
     background-color: $white;
     color: #333;
@@ -51,7 +70,8 @@ header {
       color: #333;
     }
   }
-  .dropdown.active {
-    display: block;
-  }
+}
+
+.user-menu:hover .dropdown {
+  display: block;
 }
