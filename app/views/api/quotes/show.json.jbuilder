@@ -4,7 +4,6 @@ json.userScores do
   json.array! @scores do |score|
     json.(score, :wpm)
     json.created_at time_ago_in_words(score.created_at)
-    json.username User.find(score.user_id).username
   end
 end
 

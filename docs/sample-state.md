@@ -16,8 +16,8 @@
     totalWon: 43
   },
   recentHighScores: [
-    { userId: 2, wpm: 57, created_at: "2017-01-02 08:12:56 UTC" },
-    { userId: 1, wpm: 54, created_at: "2016-12-15 11:04:44 UTC" }
+    { userId: 2, username: "userone", wpm: 57, created_at: "9 days" },
+    { userId: 1, username: "userone", wpm: 54, created_at: "4 days" }
   ],
   quote: {
     title: "Book Title",
@@ -25,12 +25,12 @@
     url: "amazon.com/book",
     image_url: "amazon.com/image_url",
     highScores: [
-      { userId: 2, wpm: 57, created_at: "2017-01-02 08:12:56 UTC" },
-      { userId: 1, wpm: 54, created_at: "2016-12-15 11:04:44 UTC" }
+      { userId: 2, username: "userone", wpm: 57, created_at: "9 days" },
+      { userId: 1, username: "userone", wpm: 54, created_at: "4 days" }
     ],
     userScores: [
-      { userId: 2, wpm: 57, created_at: "2017-01-02 08:12:56 UTC" },
-      { userId: 1, wpm: 54, created_at: "2016-12-15 11:04:44 UTC" }
+      { wpm: 57, created_at: "about 21 hours" },
+      { wpm: 54, created_at: "4 minutes" }
     ]
   }
 }
