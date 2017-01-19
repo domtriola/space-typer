@@ -28,10 +28,12 @@ class ShootingStar {
 
     this.trail.forEach(point => {
       ctx.strokeStyle = `rgba(240, 240, 240, ${this.fade})`;
+      ctx.fillStyle = `rgba(240, 240, 240, ${this.fade})`;
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.arc(point.x, point.y, 1, 0, 2 * Math.PI);
       ctx.stroke();
+      ctx.fill();
     });
   }
 

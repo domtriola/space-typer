@@ -61,10 +61,12 @@ class Stars extends React.Component {
       movement(star);
 
       ctx.strokeStyle = 'rgba(240, 240, 240, 0.8)';
+      ctx.fillStyle = 'rgba(240, 240, 240, 0.8)';
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.arc(star.x, star.y, 1, 0, 2 * Math.PI);
       ctx.stroke();
+      ctx.fill();
     });
   }
 
