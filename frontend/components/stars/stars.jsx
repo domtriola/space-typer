@@ -1,20 +1,27 @@
 import React from 'react';
 
+
 class Stars extends React.Component {
   constructor() {
     super();
 
+    this.MAX_X = 1600;
+    this.MAX_Y = 2000;
+
     this.state = { width: null, height: null };
 
     this.stars = [];
+    this.shootingStars = [];
     this.draw = this.draw.bind(this);
+    this.zoom = this.zoom.bind(this);
+    this.spawnShootingStar = this.spawnShootingStar.bind(this);
   }
 
   componentDidMount() {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 200; i++) {
       this.stars.push({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight
+        x: Math.random() * this.MAX_X,
+        y: Math.random() * this.MAX_Y
       });
     }
 
@@ -40,16 +47,10 @@ class Stars extends React.Component {
     const ctx = this.refs.stars.getContext('2d');
     ctx.clearRect(0, 0, newWidth, newHeight);
 
-    this.stars.forEach(star => {
-      if (star.x > this.state.width / 2)
-        star.x += 0.02;
-      else
-        star.x -= 0.02;
+    this.cleanUp(this.stars);
 
-      if (star.y > this.state.height / 2)
-        star.y += 0.02;
-      else
-        star.y -= 0.02;
+    this.stars.forEach(star => {
+      this.pan(star);
 
       ctx.strokeStyle = 'rgba(240, 240, 240, 0.8)';
       ctx.lineWidth = 1;
@@ -59,6 +60,50 @@ class Stars extends React.Component {
     });
 
     requestAnimationFrame(this.draw);
+  }
+
+  cleanUp() {
+    let removed = 0;
+    const newStars = [];
+    this.stars.forEach(star => {
+      if (star.x > 0)
+        newStars.push(star);
+      else
+        removed++;
+    });
+
+    for (let i = 0; i < removed; i++) {
+      newStars.push({
+        x: this.MAX_X,
+        y: Math.random() * this.MAX_Y
+      });
+    }
+
+    this.stars = newStars;
+  }
+
+  spawnShootingStar() {
+
+  }
+
+  updateShootingStar() {
+
+  }
+
+  zoom(star) {
+    if (star.x > this.state.width / 2)
+      star.x += 0.02;
+    else
+      star.x -= 0.02;
+
+    if (star.y > this.state.height / 2)
+      star.y += 0.02;
+    else
+      star.y -= 0.02;
+  }
+
+  pan(star) {
+    star.x -= 0.05;
   }
 
   render() {
