@@ -9,6 +9,7 @@ import RaceContainer from './race/race_container';
 import RaceResults from './race/race_results.jsx';
 import UserProfileContainer from './user/user_profile_container';
 import Disclaimer from './disclaimer/disclaimer.jsx';
+import RaceAgain from './race/race_again.jsx';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -38,6 +39,9 @@ const Root = ({ store }) => {
             onEnter={_redirectIfLoggedIn} />
           <Route path="/race"
             component={RaceContainer}
+            onEnter={_ensureLoggedIn} />
+          <Route path="/race-again"
+            component={RaceAgain}
             onEnter={_ensureLoggedIn} />
           <Route path="/users/:id"
             component={UserProfileContainer}

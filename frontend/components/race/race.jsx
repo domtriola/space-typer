@@ -176,6 +176,18 @@ class Race extends React.Component {
     );
   }
 
+  raceAgain() {
+    return (
+      <h4>
+        <a
+          className="race-again"
+          href="/#/race-again">
+          {'Race Again?'}
+        </a>
+      </h4>
+    );
+  }
+
   standings() {
     return (
       <Standings
@@ -190,6 +202,7 @@ class Race extends React.Component {
     return(
       <div>
         <div className="race">
+          {this.state.over ? this.raceAgain() : null}
           {this.state.over ? this.standings() : null}
           <RaceTrack
             moons={this.state.moons}

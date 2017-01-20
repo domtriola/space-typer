@@ -29,6 +29,16 @@
   width: 70px;
 }
 
+.race-again {
+  color: $orange;
+  position: absolute;
+  top: -50px;
+  left: 288px;
+}
+.race-again:hover {
+  color: $white;
+}
+
 .begin-text {
   height: 10px;
   margin: 20px 0;
