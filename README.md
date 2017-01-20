@@ -1,6 +1,6 @@
 # SpaceTyper
 
-[www.spacetyper.com](http://www.spacetyper.com)
+[Live Site](http://www.spacetyper.com)
 
 ![Home Page](./docs/images/home_page.png)
 
