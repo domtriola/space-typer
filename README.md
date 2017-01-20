@@ -32,6 +32,8 @@ SpaceTyper saves scores to a database and retrieves statistics for a user. Read 
 
 [Wireframes](./docs/wireframes)
 
+[Prototypes](./docs/prototypes)
+
 [API Endpoints](./docs/api-endpoints.md)
 
 [Component Hierarchy](./docs/component-hierarchy.md)

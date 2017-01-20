@@ -18,6 +18,7 @@ SpaceTyper is a TypeRacer inspired typing app, where the first player to finish 
 
 ## Design Docs
 * [View Wireframes](./wireframes)
+* [View Prototypes](./prototypes)
 * [React Components](./component-hierarchy.md)
 * [API endpoints](./api-endpoints.md)
 * [DB schema](./schema.md)
