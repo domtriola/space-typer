@@ -9,7 +9,7 @@
 SpaceTyper is a TypeRacer inspired typing app, where the first player to finish typing a provided quote wins. The minimum viable product is outlined below:
 
 - [x] [Hosting on Heroku][live]
-- [ ] [Production README](../README.md)
+- [x] [Production README](../README.md)
 - [x] User Authentication: Account creation, user sessions, and demo login
 - [x] Users race against randomly generated computer racers with varying words per minute speeds
 - [x] Users have a profile page with stats
