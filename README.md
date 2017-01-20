@@ -6,11 +6,15 @@
 
 ## About
 
-SpaceTyper is a TypeRacer inspired typing app, where the first player to finish typing a provided quote wins. This is a single page app built with Ruby on Rails and React. It uses a Redux state container to keep track of the front-end application state.
+SpaceTyper is a TypeRacer inspired web application, where the first player to finish typing a provided quote wins. This is a single page app built with Ruby on Rails and React. It uses a Flux architecture and a Redux state container to keep track of the front-end application state.
 
 ## Technologies
 
-I used [Ruby on Rails](http://rubyonrails.org/) to set up a CRUD cycle API that stores users, quotes, and scores in the database and provides access to that data as JSON. Setting up the backend interface as an API that responds with JSON allowed me to use the [React](https://facebook.github.io/react/) library to render all of the data as HTML and setup the front-end navigation and functionality. I used [Redux](http://redux.js.org/) to control the application state. The TypeRacer app has many components that need access to the application state and Redux establishes a single predictable container for that state.
+I used [Ruby on Rails](http://rubyonrails.org/) to set up a [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) [API](https://en.wikipedia.org/wiki/Application_programming_interface) that  performs [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations to manage users, quotes, and scores in a [PostgreSQL](https://www.postgresql.org/) database. Rather than rendering the data through Rails' conventional [ERB](http://ruby-doc.org/stdlib-2.4.0/libdoc/erb/rdoc/ERB.html) templates I formatted the data with [Jbuilder](https://github.com/rails/jbuilder) and rendered it as [JSON](http://www.json.org/).
+
+Setting up the backend interface as an API that responds with JSON allowed me to use the [React](https://facebook.github.io/react/) library to render all of the data as HTML through React's [Virtual DOM](http://tinyurl.com/zax2wts). I used the [Flux](https://facebook.github.io/flux/) design pattern to manage the data flow with actions, a dispatcher, a store, and views. I used the [Redux](http://redux.js.org/) implementation of Flux, so I could have a single predictable state container as the store. [React Router](https://github.com/ReactTraining/react-router) controls the navigation between components and keeps the url in synch with the display.
+
+I used [npm](https://www.npmjs.com/) to manage all of the JavaScript packages, [webpack](https://webpack.github.io/) to bundle all of the modules, and the [Babel](https://babeljs.io/) transpiler to convert [ES6](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015) to [ES5](https://en.wikipedia.org/wiki/ECMAScript#5th_Edition) for better cross-browser compatibility. After the JavaScript is bundled into one file and transpiled to ES5, it is minified by [Uglifier](https://github.com/lautis/uglifier) through the Rails [asset pipeline](http://guides.rubyonrails.org/asset_pipeline.html).
 
 ## Features
 
