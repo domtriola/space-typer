@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RaceInput = ({ userInput, updateInput, status }) => {
+const RaceInput = ({ userInput, updateInput, status, over }) => {
   const inputStyle = {
     backgroundColor: status ? null : "#9d301f",
     color: status ? null : "#fff"
@@ -13,7 +13,8 @@ const RaceInput = ({ userInput, updateInput, status }) => {
         autoFocus
         type="text"
         value={userInput}
-        onChange={updateInput} />
+        onChange={updateInput}
+        disabled={over} />
     </div>
   );
 };

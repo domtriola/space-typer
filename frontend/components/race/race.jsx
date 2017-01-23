@@ -214,6 +214,7 @@ class Race extends React.Component {
             remaining={this.state.remaining}
             status={this.state.status} />
           <RaceInput
+            over={this.state.over}
             userInput={this.state.userInput}
             updateInput={this.updateInput}
             status={this.state.status} />
