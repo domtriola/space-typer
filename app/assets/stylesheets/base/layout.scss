@@ -1,6 +1,7 @@
 body {
   background: url("/assets/Night_sky.png") no-repeat center center;
   background-size: cover;
+  background-color: $night-blue;
   font-family: $open-sans;
   color: $night-blue;
 }
