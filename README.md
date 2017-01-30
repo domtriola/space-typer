@@ -48,6 +48,6 @@ SpaceTyper saves scores to a database and retrieves statistics for a user. Read 
 
 ## Next Steps
 
-SpaceTyper is not intended to be a widely used app, so I did not implement public races. A next step for this app would be to use WebSockets and Rails 5's new [Action Cable](http://edgeguides.rubyonrails.org/action_cable_overview.html) to allow users to race against each other.
+A next step for this app would be to use WebSockets and Rails 5's new [Action Cable](http://edgeguides.rubyonrails.org/action_cable_overview.html) to allow users to race against each other.
 
 Also, there is one unfortunate side-effect of having all of the game logic handled on the front-end. Since scores are submitted from the front-end, a clever user could figure out how to submit their own custom score. If this was a production app I could address this by obscuring the score submission format and making the github repo private.
