@@ -198,6 +198,15 @@ class Race extends React.Component {
     );
   }
 
+  raceInput() {
+    return (
+      <RaceInput
+        userInput={this.state.userInput}
+        updateInput={this.updateInput}
+        status={this.state.status} />
+    );
+  }
+
   render() {
     return(
       <div>
@@ -213,11 +222,7 @@ class Race extends React.Component {
             current={this.state.current}
             remaining={this.state.remaining}
             status={this.state.status} />
-          <RaceInput
-            over={this.state.over}
-            userInput={this.state.userInput}
-            updateInput={this.updateInput}
-            status={this.state.status} />
+          {this.state.over ? null : this.raceInput() }
         </div>
 
         {this.state.over ? this.raceResults() : null}
