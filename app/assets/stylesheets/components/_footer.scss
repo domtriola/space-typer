@@ -1,8 +1,12 @@
 footer {
   height: 60px;
   text-align: center;
+  color: #fff;
 
   a {
     color: #fff;
+  }
+  a:hover {
+    color: $orange;
   }
 }

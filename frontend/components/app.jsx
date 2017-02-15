@@ -12,7 +12,10 @@ const App = ({ children, router }) => (
     <main>
       { children }
     </main>
-    <footer><a href="/#/disclaimer">Disclaimer</a></footer>
+    <footer>
+      &copy; <a href="https://dominicktriola.com" target="_blank">
+        Dominick Triola</a> | <a href="/#/disclaimer">Disclaimer</a>
+    </footer>
   </div>
 );
 

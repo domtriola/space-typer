@@ -46,6 +46,10 @@
       text-decoration: underline;
       margin: 0 20px;
     }
+
+    a:hover, button:hover {
+      color: $orange;
+    }
   }
 
   button, a {
