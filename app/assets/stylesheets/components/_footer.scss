@@ -1,8 +1,12 @@
-footer {
+.footer {
   height: 60px;
   text-align: center;
   color: #fff;
 
+  img {
+    width: 24px;
+    display: inline-block;
+  }
   a {
     color: #fff;
   }
