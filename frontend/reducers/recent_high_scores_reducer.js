@@ -1,7 +1,7 @@
 import { RECEIVE_LEADERBOARD_SCORES } from
   '../actions/recent_leaderboard_actions';
 
-const sessionReducer = (state = [], action) => {
+const recentHighScoresReducer = (state = [], action) => {
   Object.freeze(state);
 
   switch (action.type) {
@@ -12,4 +12,4 @@ const sessionReducer = (state = [], action) => {
   }
 };
 
-export default sessionReducer;
+export default recentHighScoresReducer;
