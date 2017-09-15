@@ -3,7 +3,7 @@
 
 .race {
   position: relative;
-  margin: 50px 50px 30px 50px;
+  margin: 10px 50px 30px 50px;
   max-width: 700px;
 }
 
@@ -11,7 +11,7 @@
 *******************/
 
 .race-track {
-  margin-bottom: 30px;
+  margin-bottom: 78px;
   width: 700px;
 }
 
@@ -30,13 +30,19 @@
 }
 
 .race-again {
-  color: $orange;
+  font-family: $open-sans;
+  text-align: center;
   position: absolute;
-  top: -50px;
+  top: 310px;
   left: 288px;
-}
-.race-again:hover {
-  color: $white;
+
+  a {
+    color: $orange;
+
+    &:hover {
+      color: $white;
+    }
+  }
 }
 
 .begin-text {

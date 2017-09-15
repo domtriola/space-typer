@@ -178,13 +178,11 @@ class Race extends React.Component {
 
   raceAgain() {
     return (
-      <h4>
-        <a
-          className="race-again"
-          href="/#/race-again">
+      <h3 className="race-again">
+        <a href="/#/race-again">
           {'Race Again?'}
         </a>
-      </h4>
+      </h3>
     );
   }
 
@@ -211,12 +209,12 @@ class Race extends React.Component {
     return(
       <div>
         <div className="race">
-          {this.state.over ? this.raceAgain() : null}
           {this.state.over ? this.standings() : null}
           <RaceTrack
             moons={this.state.moons}
             compShips={this.state.compShips}
             playerShip={this.state.playerShip} />
+          {this.state.over ? this.raceAgain() : null}
           <RaceText
             finished={this.state.finished}
             current={this.state.current}
