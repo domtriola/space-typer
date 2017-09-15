@@ -26,7 +26,7 @@ class UserMenu extends React.Component {
         <div className="user-menu">
           <img
             className="user-icon"
-            src="assets/astronaut.png" />
+            src="assets/astronaut_outline.svg" />
           <ul className="dropdown">
             <li>
               <Link to={`users/${this.props.currentUser.id}`}>Profile</Link>
