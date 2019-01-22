@@ -115,7 +115,7 @@ class Stars extends React.Component {
   }
 
   pan(star) {
-    star.x -= 0.05;
+    star.x -= 0.15;
   }
 
   render() {
