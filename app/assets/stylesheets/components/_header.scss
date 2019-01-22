@@ -2,7 +2,7 @@
 ************/
 
 header {
-  background-color: $teal;
+  background-color: $night-blue;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,7 +36,7 @@ header {
 
 .menu > a {
   color: #fff;
-  font-family: "Poiret One", sans-serif;
+  font-family: $orbitron, sans-serif;
   text-transform: uppercase;
   margin-right: 10px;
   padding: 18px 20px;

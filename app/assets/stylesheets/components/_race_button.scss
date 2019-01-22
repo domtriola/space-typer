@@ -1,14 +1,17 @@
 .race-btn {
   color: white;
-  font-family: $poiret-one;
+  font-family: $orbitron;
   text-transform: uppercase;
   font-size: 38px;
-  padding: 80px 132px 76px 88px;
-  background: url('/assets/spaceship_large.png') no-repeat;
+  line-height: 50px;
+  padding: 80px 132px 76px 96px;
+  background: url('/assets/spaceship_large_orange.png') no-repeat;
   background-size: 300px;
   margin: 50px 0 80px;
 }
 .race-btn:hover {
+  color: $white;
+  text-decoration: none;
   background: url('/assets/spaceship_large_red.png') no-repeat;
   background-size: 300px;
   -webkit-transition: background-image 0.2s ease-in-out;

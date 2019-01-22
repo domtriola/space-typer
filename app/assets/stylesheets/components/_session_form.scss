@@ -27,10 +27,16 @@
   }
 
   input[type="submit"] {
-    padding: 4px 40px;
+    padding: 10px 50px;
     display: block;
     margin: 10px auto 0;
-    color: $teal;
+    background-color: $orange;
+    color: $white;
+    border: none;
+  }
+
+  input[type="submit"]:hover {
+    background-color: $teal;
   }
 
   footer {
