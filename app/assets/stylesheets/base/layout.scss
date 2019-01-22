@@ -1,19 +1,21 @@
 body {
-  background: url("/assets/Night_sky.png") no-repeat center center;
-  background-size: cover;
+  // background: url("/assets/Night_sky.png") no-repeat center center;
+  // background-size: cover;
   background-color: $night-blue;
-  font-family: $open-sans;
-  color: $night-blue;
+  font-family: $roboto;
+  color: $mid-blue;
+  font-weight: 400;
+  letter-spacing: 0.25px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $white;
-  font-family: $poiret-one;
+  font-family: $orbitron;
   text-transform: uppercase;
 
   font-size: 22px;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: 400;
   text-shadow: 0.5px 0 $teal, 0.5px 0 $teal;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -38,9 +40,9 @@ h4 {
   font-size: 20px;
 }
 
-a {
-  color: $teal;
-  font-weight: bold;
+a:hover {
+  color: $orange;
+  text-decoration: underline;
 }
 
 p {
@@ -57,9 +59,9 @@ main {
   -webkit-box-direction: normal;
     -ms-flex-direction: column;
       flex-direction: column;
-  -webkit-box-pack: center;
-    -ms-flex-pack: center;
-      justify-content: center;
+  -webkit-box-pack: top;
+    -ms-flex-pack: top;
+      justify-content: top;
   -webkit-box-align: center;
     -ms-flex-align: center;
       align-items: center;
@@ -97,7 +99,7 @@ table {
   border-radius: 4px;
 
   h1, h2, h3, h4, h5, h6 {
-    color: $teal;
+    color: $night-blue;
   }
 }
 

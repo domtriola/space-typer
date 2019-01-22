@@ -2,7 +2,9 @@ import React from 'react';
 
 const RaceText = ({ finished, current, remaining, status }) => {
   const textStyle = {
-    color: status ? "#008800" : "#9d301f"
+    color: status ? "#008800" : "#9d301f",
+    textDecoration: 'underline',
+    fontWeight: 'bold',
   };
 
   return (

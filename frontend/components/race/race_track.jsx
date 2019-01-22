@@ -3,7 +3,7 @@ import Moon from './moon.jsx';
 import Ship from './ship.jsx';
 
 const colorPaths = ["spaceship_orange.png",
-                    "spaceship_blue.png"];
+                    "spaceship_teal.png"];
 
 const beforeRaceText = () => (
   <div>
@@ -35,7 +35,7 @@ const RaceTrack = ({ moons, playerShip, compShips }) => (
         <Ship
           yPos="126.25"
           xPos={compShips[1]}
-          colorPath="spaceship_blue.png" />
+          colorPath="spaceship_teal.png" />
       </ul>
       <div className="planet">
         <img src="/assets/earth.png" />

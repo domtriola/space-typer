@@ -36,7 +36,7 @@ class SessionForm extends React.Component {
                        "Unidentified Captain", "Incognito Adventurer",
                        "Mysterious Traveler"];
     let user = {
-      username: userNames[Math.floor(Math.random() * userNames.length)], 
+      username: userNames[Math.floor(Math.random() * userNames.length)],
       password: "password"
     };
     let time = 0;
