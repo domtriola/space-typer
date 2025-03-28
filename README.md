@@ -1,7 +1,5 @@
 # SpaceTyper
 
-[Live Site](http://www.spacetyper.com)
-
 ![Home Page](./docs/images/home_page.png)
 
 ## About
